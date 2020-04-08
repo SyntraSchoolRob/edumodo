@@ -1,0 +1,6 @@
+#this file contains a log of all worked sessions
+##sessions are logged manually by Robbe with a stopwatch
+------
+
+Wednesday 8Apr2020
+-- total time =
