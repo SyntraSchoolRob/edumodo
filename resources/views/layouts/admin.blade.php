@@ -12,19 +12,18 @@
     <link href="" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="{{asset('css/sb-admin-2.css')}}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
     @yield('styles')
 </head>
 <body id="page-top">
 <div id="wrapper">
     <ul class="navbar-nav bg-gradient-warning sidebar sidebar-dark accordion" id="accordionSidebar">
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/admin')}}">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
+        <a class="sidebar-brand align-items-center justify-content-center mb-5" href="{{url('/admin')}}">
+            <div class="sidebar-brand-icon ">
+                <img src="{{asset('images/website/headerLogo.png')}}" alt="">
             </div>
-            <div class="sidebar-brand-text mx-3">Edumodo logo</div>
+            <div class="sidebar-brand-text mx-3">Edumodo</div>
         </a>
-        <hr class="sidebar-divider my-0">
+        <hr class="sidebar-divider my-0 mt-4">
         <li class="nav-item active">
             <a class="nav-link" href="{{url('/admin')}}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
