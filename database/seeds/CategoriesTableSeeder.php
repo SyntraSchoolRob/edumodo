@@ -13,9 +13,12 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('categories')->insert(['name'=>'CAT A']);
-        DB::table('categories')->insert(['name'=>'CAT B']);
-        DB::table('categories')->insert(['name'=>'CAT C']);
+        DB::table('categories')->insert(['name'=>'Engineering']);
+        DB::table('categories')->insert(['name'=>'Accounting']);
+        DB::table('categories')->insert(['name'=>'Technology']);
+        DB::table('categories')->insert(['name'=>'Design']);
+        DB::table('categories')->insert(['name'=>'Physics']);
+        DB::table('categories')->insert(['name'=>'Chemistry']);
     }
 
 }
