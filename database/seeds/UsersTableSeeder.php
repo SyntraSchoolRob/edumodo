@@ -16,7 +16,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             'is_active'=>1,
             'name'=>'EdumodoAdmin',
-            'email'=>'hi@hello.com',
+            'email'=>'hi@hello.us',
             'photo_id'=>1,
             'password'=>bcrypt(12345678)]);
         factory('App\User',5)->create();

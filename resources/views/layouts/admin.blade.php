@@ -247,30 +247,16 @@
         </div>
     </div>
 </div>
-
-<!-- Bootstrap core JavaScript-->
-
-
-
-<!-- Core plugin JavaScript-->
 <script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/jquery.easing.js')}}"></script>
-
-<!-- Custom scripts for all pages-->
 <script src="{{asset('js/sb-admin-2.js')}}"></script>
-
-<!-- Page level plugins -->
 <script src="{{asset('js/Chart.js')}}"></script>
-
-<!-- Page level custom scripts -->
 <script src="{{asset('js/chart-area-demo.js')}}"></script>
 <script src="{{asset('js/chart-pie-demo.js')}}"></script>
-{{--<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>--}}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 <script src="{{asset('js/mijnscript.js')}}"></script>
 @yield('scripts')
-
 </body>
-
 </html>

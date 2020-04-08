@@ -3,5 +3,5 @@
     Dashboard
 @endsection
 @section('content')
-        
+
 @endsection
