@@ -1,6 +1,11 @@
+--timemangement
 #this file contains a log of all worked sessions
-##sessions are logged manually by Robbe with a stopwatch
+##sessions are logged manually with a stopwatch
 ------
 
 Wednesday 8Apr2020
--- total time =
+-- total time = 6 houres
+
+March 2020
+-- total time = 8 houres
+-- Canban, analyses, project-setup, blueprint database analyse
