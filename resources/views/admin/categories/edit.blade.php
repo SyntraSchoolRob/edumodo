@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="form-group">
-                        {!! Form::submit('Update Categories', ['class'=>'btn btn-warning rounded-0'])
+                        {!! Form::submit('Update Category', ['class'=>'btn btn-warning rounded-pill'])
                          !!}
                     </div>
 
@@ -26,7 +26,7 @@
                     $category->id] ])
                      !!}
                     <div class="form-group">
-                        {!! Form::submit('Delete category', ['class' => 'btn btn-danger rounded-0']) !!}
+                        {!! Form::submit('Delete category', ['class' => 'btn btn-danger rounded-pill']) !!}
                     </div>
                     {!! Form::close() !!}
 

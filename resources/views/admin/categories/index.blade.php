@@ -7,7 +7,7 @@
         <h1>All Categories</h1>
     </div>
     <div class="col-12">
-        <a class="btn btn-success rounded-0" href="{{route('categories.create')}}">New Category</a>
+        <a class="btn btn-success rounded-pill mb-2" href="{{route('categories.create')}}">New Category</a>
 
     </div>
 

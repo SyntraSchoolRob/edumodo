@@ -3,7 +3,7 @@
 All Posts
 @endsection
 @section('content')
-        <h1>All Posts</h1>
+        <h1>Posts</h1>
     <table id="myTable" class="display" style="width:100%">
         <thead>
             <tr>
@@ -12,7 +12,6 @@ All Posts
                 <th scope="row">Owner</th>
                 <th scope="row">Category</th>
                 <th scope="row">Title</th>
-                <th scope="row">Body</th>
                 <th scope="row">Post link</th>
                 <th scope="row">Comments</th>
                 <th scope="row">Created at</th>
@@ -27,8 +26,7 @@ All Posts
                 <td>{{$post->id}}</td>
                 <td>
 
-                    <img height="62" src="{{$post->photo ? asset($post->photo->file) : 'http://placehold.it/62x62'}}"
-                         alt="">
+                    <img height="62" src="{{$post->photo ? asset($post->photo->file) : 'http://placehold.it/62x62'}}" alt="" class="rounded-circle">
 
                 </td>
                 <td>{{$post->user->name}}</td>
@@ -36,7 +34,6 @@ All Posts
                     {{$post->category ? $post->category_name : 'Uncategorized'}}
                 </td>
                 <td>{{$post->title}}</td>
-                <td>{{$post->body}}</td>
                 <td>
                     <a href="{{route('posts.edit',$post->id)}}">Post Link</a>
                 </td>
