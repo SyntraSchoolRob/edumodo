@@ -1,7 +1,10 @@
---timemangement
+--timemangement back-end only
 #this file contains a log of all worked sessions
 ##sessions are logged manually with a stopwatch
 ------
+
+Thursday 9Apr 2020
+-- total time =
 
 Wednesday 8Apr2020
 -- total time = 6 houres
