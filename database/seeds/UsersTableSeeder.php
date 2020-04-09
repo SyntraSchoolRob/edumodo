@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // creation administrator user
         DB::table('users')->insert([
             'is_active'=>1,
             'name'=>'EdumodoAdmin',
@@ -26,6 +26,22 @@ class UsersTableSeeder extends Seeder
             'updated_at'=>now(),
 
         ]);
-        factory('App\User',5)->create();
+
+        // creation subscriber user
+        DB::table('users')->insert([
+            'is_active'=>1,
+            'name'=>'EdumodoUser',
+            'email'=>'user@edumodo.com',
+            'email_verified_at'=>now(),
+            'photo_id'=>1,
+            'password'=>bcrypt(12345678),
+            'remember_token' => Str::random(10),
+            'created_at'=>now(),
+            'updated_at'=>now(),
+
+        ]);
+
+        // --factory for development purposes only
+        //factory('App\User',5)->create();
     }
 }
