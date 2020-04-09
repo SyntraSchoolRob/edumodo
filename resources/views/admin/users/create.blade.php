@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    User toevoegen
+    Add User
     @endsection
 @section('content')
     <div class="col-12">

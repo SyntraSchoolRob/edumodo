@@ -35,7 +35,7 @@
                     <tr>
                         <td>{{$user->id}}</td>
                         <td>
-                            <img height="62" width="62" src="{{$user->photo ? asset($user->photo->file) :'http:/placehold.it/62x62'}}" alt="" class="rounded-circle">
+                            <img height="62" width="62" src="{{$user->photo ? asset($user->photo->file) : asset('images/userImage.png') }}" alt="user image" class="rounded-circle">
                         </td>
                         <td>
                             <a href="{{route('users.edit',$user->id)}}">{{$user->name}}</a>
@@ -56,17 +56,13 @@
                         <td>{{$user->created_at}}</td>
                         <td>{{$user->updated_at}}</td>
                         <td>
-                            <a class="btn btn-outline-warning rounded-pill w-100 mb-1" href="{{route('users.edit',
-                            $user->id)}}">Edit</a>
+                            <a class="btn btn-outline-warning rounded-pill w-100 mb-1" href="{{route('users.edit',$user->id)}}">Edit</a>
                             @if($user->deleted_at != null)
-                                <a class="btn btn-outline-danger rounded-pill mb-1 w-100" href="{{route('admin.userrestore',
-                            $user->id)}}">Not Active</a>
+                                <a class="btn btn-outline-danger rounded-pill mb-1 w-100" href="{{route('admin.userrestore',$user->id)}}">Not Active</a>
                             @else
-                            {!! Form::open(['method'=>'DELETE', 'action'=>['AdminUsersController@destroy', $user->id]])
-                             !!}
+                            {!! Form::open(['method'=>'DELETE', 'action'=>['AdminUsersController@destroy', $user->id]]) !!}
                             <div class="form-group">
-                                {!! Form::submit('Active',['class'=>'btn btn-outline-success rounded-pill w-100 mb-1'])
-                                 !!}
+                                {!! Form::submit('Active',['class'=>'btn btn-outline-success rounded-pill w-100 mb-1']) !!}
                             </div>
                             {!! Form::close() !!}
                                 @endif

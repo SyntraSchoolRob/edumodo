@@ -1,9 +1,9 @@
 @extends('layouts.admin')
 @section('title')
-All Posts
+    All Posts
 @endsection
 @section('content')
-        <h1>Posts</h1>
+    <h1>Posts</h1>
     <table id="myTable" class="display" style="width:100%">
         <thead>
             <tr>
@@ -21,13 +21,10 @@ All Posts
         <tbody>
         @if($posts)
             @foreach($posts as $post)
-
             <tr>
                 <td>{{$post->id}}</td>
                 <td>
-
-                    <img height="62" src="{{$post->photo ? asset($post->photo->file) : 'http://placehold.it/62x62'}}" alt="" class="rounded-circle">
-
+                    <img height="62" src="{{$post->photo ? asset($post->photo->file) : 'http://placehold.it/62x62'}}" alt="post image" class="rounded-circle">
                 </td>
                 <td>{{$post->user->name}}</td>
                 <td>
@@ -45,5 +42,4 @@ All Posts
             @endif
         </tbody>
     </table>
-
 @endsection
