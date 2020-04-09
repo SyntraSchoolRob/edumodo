@@ -28,7 +28,6 @@ class UsersEditRequest extends FormRequest
             'first_name'=>'required|string',
             'last_name'=>'required|string',
             'email'=>'required|email',
-            'is_active'=> 'required',
         ];
     }
     public function messages(){
@@ -36,7 +35,6 @@ class UsersEditRequest extends FormRequest
             'email.required' => 'Email is required',
             'first_name.required' => 'First name is required',
             'last_name.required' => 'Last name is required',
-            'is_active.required'=> 'Status is required',
         ];
     }
 }
