@@ -4,9 +4,9 @@
     @endsection
 @section('content')
     <div class="col-12">
-        <h1>User toevoegen</h1>
+        <h1>Create a new user</h1>
     </div>
-    <div class="col-8 offset-2">
+    <div class="col-8">
         @include('includes.form_error')
         {!! Form::open(['method'=>'POST', 'action'=>'AdminUsersController@store','files'=>true]) !!}
         <div class="form-group">
@@ -34,7 +34,7 @@
             {!! Form::file('photo_id',null,['class'=>'form-control']) !!}
         </div>
         <div class="form-group">
-           {!! Form::submit('Create user', ['class' => 'btn btn-primary']) !!}
+           {!! Form::submit('Create user', ['class' => 'btn btn-success rounded-pill']) !!}
         </div>
         {!! Form::close() !!}
 

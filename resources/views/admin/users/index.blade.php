@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    onze users
+    All Users
 @endsection
 @section('content')
     <div class="col-12">
@@ -10,6 +10,9 @@
     </div>
     <div class="col-12">
         <h1>All users</h1>
+    </div>
+    <div class="col-12">
+        <a class="btn btn-success rounded-pill mb-2" href="{{route('users.create')}}">New User</a>
     </div>
     <div class="col-12">
         <table class="table table-striped">
@@ -32,12 +35,10 @@
                     <tr>
                         <td>{{$user->id}}</td>
                         <td>
-
-                            <img height="62" src="{{$user->photo ? asset($user->photo->file) :'http:/placehold.it/62x62'}}" alt="" class="rounded-circle">
+                            <img height="62" width="62" src="{{$user->photo ? asset($user->photo->file) :'http:/placehold.it/62x62'}}" alt="" class="rounded-circle">
                         </td>
                         <td>
                             <a href="{{route('users.edit',$user->id)}}">{{$user->name}}</a>
-
                         </td>
                         <td>{{$user->email}}</td>
                         <td>
@@ -77,6 +78,4 @@
         </table>
         {{ $users->links() }}
     </div>
-
-
 @endsection

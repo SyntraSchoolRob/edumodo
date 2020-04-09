@@ -42,6 +42,6 @@ class UsersTableSeeder extends Seeder
         ]);
 
         // --factory for development purposes only
-        //factory('App\User',5)->create();
+        factory('App\User',5)->create();
     }
 }
