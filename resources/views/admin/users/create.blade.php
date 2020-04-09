@@ -21,10 +21,12 @@
            {!! Form::label('Select roles: (hou de ctrl toets ingedrukt om meerdere roles te selecteren') !!}
             {!! Form::select('roles[]', $roles, null,['class'=>'form-control', 'multiple'=>'multiple']) !!}
         </div>
-        <div class="form-group">
-            {!! Form::label('is_active', 'Status:') !!}
-            {!! Form::select('is_active', array(1=>'Active', 0=>'Not Active') , 0 , ['class'=>'form-control']) !!}
-        </div>
+        <fieldset disabled>
+            <div class="form-group">
+                {!! Form::label('is_active', 'Status:') !!}
+                {!! Form::select('is_active', array(1=>'Active') , 0 , ['class'=>'form-control']) !!}
+            </div>
+        </fieldset>
         <div class="form-group">
             {!! Form::label('password', 'Password:') !!}
             {!! Form::password('password',['class'=>'form-control']) !!}
