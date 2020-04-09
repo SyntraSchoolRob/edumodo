@@ -25,9 +25,9 @@ class UsersRequest extends FormRequest
     {
         return [
             //
-            'name'=>'required|string',
+            'first_name'=>'required|string',
+            'last_name'=>'required|string',
             'email'=>'required|email|unique:users',
-            //'role_id'=>'required',
             'is_active'=> 'required',
             'password'=>'required'
         ];
@@ -35,7 +35,8 @@ class UsersRequest extends FormRequest
     public function messages(){
         return[
            'email.required' => 'Email is required',
-           'name.required' => 'Name is required',
+           'first_name.required' => 'First name is required',
+           'last_name.required' => 'Last name is required',
            'password.required'=> 'Password is required'
         ];
     }

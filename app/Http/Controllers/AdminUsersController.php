@@ -22,7 +22,7 @@ class AdminUsersController extends Controller
     {
         //
 
-        $users = User::withTrashed()->paginate(8);
+        $users = User::withTrashed()->paginate(25);
         //dd($users);
         return view('admin.users.index', compact('users'));
     }
@@ -47,26 +47,21 @@ class AdminUsersController extends Controller
      */
     public function store(UsersRequest $request)
     {
-        //$input = $request->all();
         $user = new User();
-        $user->name = $request->name;
+        $user->first_name = $request->first_name;
+        $user->last_name = $request->last_name;
         $user->email = $request->email;
         $user->is_active = $request->is_active;
         if($file = $request->file('photo_id')){
             $name = time() . $file->getClientOriginalName();
             $file->move('images', $name);
             $photo = Photo::create(['file'=>$name]);
-            //$input['photo_id'] = $photo->id;
             $user->photo_id = $photo->id;
         }
         $user->password = Hash::make($request['password']);
         $user->save();
-        //User::create($input);
         $user->roles()->sync($request->roles, false);
-
-
         Session::flash('success', $request->name . ' roles added');
-
         return redirect('/admin/users');
     }
 
@@ -90,7 +85,6 @@ class AdminUsersController extends Controller
     public function edit(User $user)
     {
         //
-        //$user = User::findOrFail($id);
         $roles = Role::pluck('name','id')->all();
         return view ('admin.users.edit', compact('user', 'roles'));
     }
@@ -106,7 +100,6 @@ class AdminUsersController extends Controller
     {
         //
 
-
         $user = User::findOrFail($id);
         if(trim($request->password)==''){
             $input = $request->except('password');
@@ -114,14 +107,12 @@ class AdminUsersController extends Controller
             $input = $request->all();
             $input['password'] = Hash::make($request['password']);
         }
-
         if($file = $request->file('photo_id')){
             $name = time() . $file->getClientOriginalName();
             $file->move('images', $name);
             $photo = Photo::create(['file'=>$name]);
             $input['photo_id'] = $photo->id;
         }
-        //$input['password'] = Hash::make($request['password']);
         $user->update($input);
         $user->roles()->sync($request->roles, true);
         return redirect('admin/users');
@@ -152,6 +143,10 @@ class AdminUsersController extends Controller
     public function userRestore($id){
         User::onlyTrashed()->where('id',$id)->restore();
         Session::flash('softdeleted_user', 'The user has been restored');
+
+        // updating is_active status back to 1
+
+
         return redirect('admin/users');
     }
 }

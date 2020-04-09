@@ -16,7 +16,8 @@ class UsersTableSeeder extends Seeder
         // creation administrator user
         DB::table('users')->insert([
             'is_active'=>1,
-            'name'=>'EdumodoAdmin',
+            'first_name'=>'Edumodo',
+            'last_name'=>'Admin',
             'email'=>'hi@hello.us',
             'email_verified_at'=>now(),
             'photo_id'=>1,
@@ -30,7 +31,8 @@ class UsersTableSeeder extends Seeder
         // creation subscriber user
         DB::table('users')->insert([
             'is_active'=>1,
-            'name'=>'EdumodoUser',
+            'first_name'=>'Edumodo',
+            'last_name'=>'User',
             'email'=>'user@edumodo.com',
             'email_verified_at'=>now(),
             'photo_id'=>1,
@@ -42,6 +44,6 @@ class UsersTableSeeder extends Seeder
         ]);
 
         // --factory for development purposes only
-        factory('App\User',5)->create();
+        factory('App\User',2)->create();
     }
 }

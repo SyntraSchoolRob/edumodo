@@ -25,17 +25,17 @@ class UsersEditRequest extends FormRequest
     {
         return [
             //
-            'name'=>'required|string',
+            'first_name'=>'required|string',
+            'last_name'=>'required|string',
             'email'=>'required|email',
-            //'role_id'=>'required',
             'is_active'=> 'required',
         ];
     }
     public function messages(){
         return[
             'email.required' => 'Email is required',
-            'name.required' => 'Name is required',
-            //'role_id.required'=> 'Role is required',
+            'first_name.required' => 'First name is required',
+            'last_name.required' => 'Last name is required',
             'is_active.required'=> 'Status is required',
         ];
     }
