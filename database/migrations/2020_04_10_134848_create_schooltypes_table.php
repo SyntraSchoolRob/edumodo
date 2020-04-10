@@ -15,6 +15,7 @@ class CreateSchooltypesTable extends Migration
     {
         Schema::create('schooltypes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('type');
             $table->timestamps();
         });
     }

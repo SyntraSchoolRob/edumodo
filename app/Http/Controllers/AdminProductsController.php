@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class AdminProductsController extends Controller
@@ -14,6 +15,8 @@ class AdminProductsController extends Controller
     public function index()
     {
         //
+
+        return view('admin.products.index');
     }
 
     /**
@@ -24,6 +27,8 @@ class AdminProductsController extends Controller
     public function create()
     {
         //
+
+        return view('admin.products.create');
     }
 
     /**
@@ -57,6 +62,8 @@ class AdminProductsController extends Controller
     public function edit($id)
     {
         //
+        $product = Product::findOrFail($id);
+        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -80,5 +87,8 @@ class AdminProductsController extends Controller
     public function destroy($id)
     {
         //
+        unlink(public_path(). $product->photo->file);
+        $product->delete();
+        return redirect('admin/products');
     }
 }

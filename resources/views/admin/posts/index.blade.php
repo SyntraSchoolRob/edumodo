@@ -28,7 +28,7 @@
                 </td>
                 <td>{{$post->user->name}}</td>
                 <td>
-                    {{$post->category ? $post->category_name : 'Uncategorized'}}
+                    {{$post->category ? $post->category_name : 'Uncatalogued'}}
                 </td>
                 <td>{{$post->title}}</td>
                 <td>
