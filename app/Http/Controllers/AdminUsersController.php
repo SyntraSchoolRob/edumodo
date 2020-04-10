@@ -115,6 +115,7 @@ class AdminUsersController extends Controller
         }
         $user->update($input);
         $user->roles()->sync($request->roles, true);
+
         return redirect('admin/users');
 
     }

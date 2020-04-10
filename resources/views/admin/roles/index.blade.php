@@ -37,16 +37,19 @@
                         <a href="{{route('roles.edit', $role->id)}}"> {{$role->name}}</a>
                     </td>
                     <td>
+                        @if($role->deleted_at == null)
                         <a class="btn btn-outline-warning rounded-pill mb-1" href="{{route('roles.edit', $role->id)}}">Edit</a>
-
+                            @endif
                         @if($role->deleted_at != null )
                             <a class="btn btn-outline-success rounded-pill mb-1" href="{{route('admin.rolerestore', $role->id)}}">Not Active</a>
                         @else
+                            @if($role->id != 1 and $role->id !=3 )
                             {!! Form::open(['method'=>'DELETE', 'action'=>['AdminRolesController@destroy', $role->id]]) !!}
                             <div class="form-group">
                                 {!! Form::submit('Active',['class'=>'btn btn-outline-danger rounded-pill mb-1']) !!}
                             </div>
                             {!! Form::close() !!}
+                            @endif
                         @endif
                     </td>
                 </tr>

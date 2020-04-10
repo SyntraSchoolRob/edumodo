@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 @section('title')
-    User toevoegen
+    Edit User
 @endsection
 @section('content')
     <div class="col-12">
@@ -28,9 +28,7 @@
                 @if($user->id != 1 and $user->id != 2)
                 <div class="form-group">
                     {!! Form::label('roles[]', 'Role:') !!}
-                    {!! Form::select('roles[]',$roles, $user->roles->pluck('id')->toArray(),
-                    ['class'=>'form-control', 'multiple'=>'multiple'])
-                     !!}
+                    {!! Form::select('roles[]',$roles, $user->roles->pluck('id')->toArray(),['class'=>'form-control', 'multiple'=>'multiple']) !!}
                 </div>
                 @endif
                 <div class="form-group">
