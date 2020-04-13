@@ -3,8 +3,11 @@
 ##sessions are logged manually with a stopwatch
 ------
 
+Monday 13Apr 2020
+-- total time =
+
 Friday 10Apr 2020
--- total time
+-- total time = 6 houres
 
 Thursday 9Apr 2020
 -- total time = 7 houres

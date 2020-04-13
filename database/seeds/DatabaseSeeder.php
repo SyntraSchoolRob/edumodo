@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(TagsTableSeeder::class);
         $this->call(PostsTagsTableSeeder::class);
         $this->call(PhotosTableSeeder::class);
+        $this->call(ProductsTableSeeder::class);
+        $this->call(SchoolTypesTableSeeder::class);
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     }

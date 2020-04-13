@@ -2,6 +2,7 @@
   <dictionary name="School">
     <words>
       <w>edumodo</w>
+      <w>schooltype</w>
     </words>
   </dictionary>
 </component>
