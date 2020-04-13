@@ -22,7 +22,7 @@ class CreateCommentRepliesTable extends Migration
             $table->string('email');
             $table->text('body');
             $table->timestamps();
-            $table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
+           // $table->foreign('comment_id')->references('id')->on('comments')->onDelete('cascade');
         });
     }
 

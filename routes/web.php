@@ -34,7 +34,6 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('/admin/categories', 'AdminCategoriesController');
     Route::resource('/admin/media', 'AdminMediasController');
     Route::resource('/admin/comments', 'PostCommentController');
-    Route::resource('/admin/commentreplies', 'CommentRepliesController');
     Route::resource('/admin/roles', 'AdminRolesController');
     Route::get('/admin/roles/restore/{role}', 'AdminRolesController@roleRestore')->name('admin.rolerestore');
 
