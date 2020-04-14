@@ -11,8 +11,12 @@ class Order extends Model
         'user_id', 'product', 'items', 'totalprice',
     ];
 
+    public function products(){
+        return $this->belongsToMany('App\Product', 'order_details');
+    }
     public function user(){
         return $this->belongsTo('App\User')->withTrashed();
     }
+
 
 }
