@@ -11,4 +11,8 @@ class Order extends Model
         'user_id', 'product', 'items', 'totalprice',
     ];
 
+    public function user(){
+        return $this->belongsTo('App\User')->withTrashed();
+    }
+
 }

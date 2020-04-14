@@ -11,4 +11,8 @@ class Address extends Model
         'street', 'city', 'state', 'zip', 'country_id',
     ];
 
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }
