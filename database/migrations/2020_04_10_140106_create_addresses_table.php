@@ -23,7 +23,7 @@ class CreateAddressesTable extends Migration
             $table->unsignedBigInteger('country_id')->index()->unsigned();
             $table->timestamps();
 
-
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
