@@ -18,7 +18,7 @@
                     <h6 class="m-0 font-weight-bold text-success">Overview of you're dashboard</h6>
                 </div>
                 <div class="card-body">
-                    <p>lorem ipsum text ehre</p>
+                    <p>lorem ipsum text here</p>
                     <p class="mb-0">Lorem ipsum text here</p>
                 </div>
             </div>

@@ -35,7 +35,7 @@
         </div>
         <li class="nav-item">
             <a class="nav-link" href="{{route('comments.index')}}">
-                <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-envelope"></i>
                 <span>Messages</span>
             </a>
         </li>
@@ -44,26 +44,26 @@
         </div>
         <li class="nav-item">
             <a class="nav-link" href="{{route('posts.index')}}">
-                <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-store"></i>
                 <span>Products</span>
             </a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="{{route('categories.index')}}">
-                <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-stream"></i>
                 <span>Categories</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('categories.index')}}">
-                <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-graduation-cap"></i>
                 <span>School-types</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('comments.index')}}">
-                <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-shipping-fast"></i>
                 <span>Orders</span>
             </a>
         </li>
@@ -72,19 +72,19 @@
         </div>
         <li class="nav-item">
             <a class="nav-link" href="{{route('users.index')}}">
-                <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-user"></i>
                 <span>Users</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('roles.index')}}">
-                <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-users-cog"></i>
                 <span>Roles</span>
             </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('media.index')}}">
-                <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-camera-retro"></i>
                 <span>Photos</span>
             </a>
         </li>
@@ -148,7 +148,7 @@
             <div class="container-fluid">
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
                     <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> View all orders</a>
+                    <a href="{{route('orders.index')}}" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> View all orders</a>
                 </div>
                 <div class="row">
                     <div class="col-xl-3 col-md-6 mb-4">
@@ -157,10 +157,10 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Products</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">40,000</div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        <i class="fas fa-store fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        <i class="fas fa-list fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -190,7 +190,7 @@
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        <i class="fas fa-user fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
@@ -202,10 +202,10 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total revenue</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        <i class="fab fa-ethereum fa-2x text-gray-300"></i>
                                     </div>
                                 </div>
                             </div>
