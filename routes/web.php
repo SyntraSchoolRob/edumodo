@@ -20,9 +20,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//Route::get('/admin', 'HomeController@index')->name('admin');
-
-
 Route::group(['middleware' => 'admin'], function(){
     Route::get('/admin', function(){
         return view('admin.index');
@@ -36,12 +33,10 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('/admin/comments', 'PostCommentController');
     Route::resource('/admin/roles', 'AdminRolesController');
     Route::get('/admin/roles/restore/{role}', 'AdminRolesController@roleRestore')->name('admin.rolerestore');
-
+    Route::resource('/admin/orders', 'AdminOrdersController');
+    Route::resource('/admin/products', 'AdminProductsController');
+    Route::resource('/admin/schooltypes', 'AdminSchoolTypesController');
 });
-
-
-
-
 
 //FRONT ROUTES
 Route::get('/post/{slug}', 'AdminPostsController@post')->name('home.post');
