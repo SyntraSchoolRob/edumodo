@@ -21,17 +21,8 @@ class AdminPostsController extends Controller
     public function index()
     {
         //
-        //$posts = Post::where('title', '=','Aut laborum est tenetur consequuntur totam omnis.');
-       $posts = Post::all();
-
-        /*$posts = Post::where(function ($query) {
-            $query->select('title')
-                ->from('posts')
-                ->whereTitle('Aut laborum est tenetur consequuntur totam omnis.');
-
-        })->get();*/
-
-
+        $posts = Post::with(['user','photo', 'category'])
+            ->paginate(25);
 
         return view('admin.posts.index', compact('posts'));
     }
