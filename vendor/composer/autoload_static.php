@@ -143,6 +143,7 @@ class ComposerStaticInit51a7cc5790087efb3c504d6b64a00c07
         ),
         'B' => 
         array (
+            'BeyondCode\\QueryDetector\\' => 25,
             'Barryvdh\\Debugbar\\' => 18,
         ),
         'A' => 
@@ -398,6 +399,10 @@ class ComposerStaticInit51a7cc5790087efb3c504d6b64a00c07
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'BeyondCode\\QueryDetector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src',
+        ),
         'Barryvdh\\Debugbar\\' => 
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src',
@@ -519,6 +524,18 @@ class ComposerStaticInit51a7cc5790087efb3c504d6b64a00c07
         'Barryvdh\\Debugbar\\Twig\\Extension\\Stopwatch' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/Extension/Stopwatch.php',
         'Barryvdh\\Debugbar\\Twig\\Node\\StopwatchNode' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/Node/StopwatchNode.php',
         'Barryvdh\\Debugbar\\Twig\\TokenParser\\StopwatchTokenParser' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Twig/TokenParser/StopwatchTokenParser.php',
+        'BeyondCode\\QueryDetector\\Events\\QueryDetected' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/Events/QueryDetected.php',
+        'BeyondCode\\QueryDetector\\LumenQueryDetectorServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/LumenQueryDetectorServiceProvider.php',
+        'BeyondCode\\QueryDetector\\Outputs\\Alert' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/Outputs/Alert.php',
+        'BeyondCode\\QueryDetector\\Outputs\\Clockwork' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/Outputs/Clockwork.php',
+        'BeyondCode\\QueryDetector\\Outputs\\Console' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/Outputs/Console.php',
+        'BeyondCode\\QueryDetector\\Outputs\\Debugbar' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/Outputs/Debugbar.php',
+        'BeyondCode\\QueryDetector\\Outputs\\Json' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/Outputs/Json.php',
+        'BeyondCode\\QueryDetector\\Outputs\\Log' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/Outputs/Log.php',
+        'BeyondCode\\QueryDetector\\Outputs\\Output' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/Outputs/Output.php',
+        'BeyondCode\\QueryDetector\\QueryDetector' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/QueryDetector.php',
+        'BeyondCode\\QueryDetector\\QueryDetectorMiddleware' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/QueryDetectorMiddleware.php',
+        'BeyondCode\\QueryDetector\\QueryDetectorServiceProvider' => __DIR__ . '/..' . '/beyondcode/laravel-query-detector/src/QueryDetectorServiceProvider.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonImmutable' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonImmutable.php',
         'Carbon\\CarbonInterface' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterface.php',
