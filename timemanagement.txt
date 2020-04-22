@@ -3,27 +3,30 @@
 ##sessions are logged manually with a stopwatch
 ------
 
-Saterday 17Apr 2020
+Wednesday 22Apr 2020
 -- total time =
 
-Thursday 16Apr 2020
--- total time = 4 houres
+Saturday 17Apr 2020
+-- total time = 1 hours
 
-Thusday 14Apr 2020
--- total time = 5 houres
+Thursday 16Apr 2020
+-- total time = 4 hours
+
+Thursday 14Apr 2020
+-- total time = 5 hours
 
 Monday 13Apr 2020
--- total time = 4 houres
+-- total time = 4 hours
 
 Friday 10Apr 2020
--- total time = 6 houres
+-- total time = 6 hours
 
 Thursday 9Apr 2020
--- total time = 7 houres
+-- total time = 7 hours
 
 Wednesday 8Apr2020
--- total time = 6 houres
+-- total time = 6 hours
 
 March 2020
--- total time = 8 houres
+-- total time = 8 hours
 -- Canban, analyses, project-setup, blueprint database analyse
