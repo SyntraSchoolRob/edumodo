@@ -38,4 +38,6 @@ Route::group(['middleware' => 'admin'], function(){
 //front_end
 
 // Route::get('/product/{id}', 'MenuController@product')->name('product');
+Route::get('/checkout', 'CheckoutController@index')->name('checkout');
+
 

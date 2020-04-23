@@ -16,7 +16,7 @@
                 <a itemprop="url" class="nav-link menuStyle" href="">Product</a>
             </li>
             <li class="nav-item pl-lg-1">
-                <a itemprop="url" class="nav-link menuStyle" href="checkout.html">Checkout</a>
+                <a itemprop="url" class="nav-link menuStyle" href="{{route('checkout')}}">Checkout</a>
             </li>
             <li class="nav-item pl-lg-1">
                 <a itemprop="url" class="nav-link menuStyle" href="contact.html">Contact</a>
