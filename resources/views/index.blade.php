@@ -3,14 +3,13 @@
 @section('description')Education for innovation and society @endsection
 @section('author')Robbe @endsection
 @section('keywords')education, innovation, software, security, shop, technology, society, bootstrap, php, syntra, school, university @endsection
-
 @section('body')
 <body itemscope itemtype="https://schema.org/WebPage">
 <header class="p-0">
     <div class="bg-img maxWidth mx-auto">
         <nav class="navbar navbar-expand-lg navbar-light maxWidth1150 mx-auto bg-sm-Beige" itemscope itemtype="https://schema.org/SiteNavigationElement">
             <a itemprop="url" class="btn btnShop d-lg-none" href="shop.html">Shop</a>
-            <a itemprop="url" class="navbar-brand" href="index.html"><img itemprop="image" src="images/headerLogo.png" alt="logo"></a>
+            <a itemprop="url" class="navbar-brand" href="index.html"><img itemprop="image" src="{{asset('images/website/headerLogo.png')}}" alt="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,7 +48,7 @@
                     <a class="btn" id="buttonHead" href="shop.html">Visit Our Campus</a>
                 </div>
                 <div class="col-12 col-sm-4 col-md-5 col-lg-6 p-0">
-                    <img src="images/homeMobile.png" alt="edumodo university" class="img-fluid d-sm-none">
+                    <img src="{{asset('images/website/homeMobile.png')}}" alt="edumodo university" class="img-fluid d-sm-none">
                 </div>
             </div>
         </div>
@@ -65,19 +64,19 @@
     <div class="row mt-5">
         <div class="col-12 col-md-6 col-lg-4">
             <div id="secDivBox1" class="rounded d-sm-flex d-md-block p-2 pb-lg-5">
-                <div class="d-flex justify-content-center"><img itemprop="img" src="images/sec1img1.png" alt="online education" class="img-fluid"></div>
+                <div class="d-flex justify-content-center"><img itemprop="img" src="{{asset('images/website/sec1img1.png')}}" alt="online education" class="img-fluid"></div>
                 <h3 class="text-white fs1-2rem fs-sm-1-6rem d-flex align-items-center justify-content-center workSansB">Online Education</h3>
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div id="secDivBox2" class="rounded d-sm-flex d-md-block p-2 pb-lg-5 mt-3 mt-md-0">
-                <div class="d-flex justify-content-center"><img itemprop="img" src="images/sec1img2.png" alt="modern education" class="img-fluid"></div>
+                <div class="d-flex justify-content-center"><img itemprop="img" src="{{asset('images/website/sec1img2.png')}}" alt="modern education" class="img-fluid"></div>
                 <h3 class="text-white fs1-2rem fs-sm-1-6rem d-flex align-items-center justify-content-center workSansB">Modern Education</h3>
             </div>
         </div>
         <div class="col-12 col-md-12 col-lg-4">
             <div id="secDivBox3" class="rounded d-sm-flex d-lg-block p-2 pb-lg-5 mt-3 mt-md-4 mt-lg-0">
-                <div class="d-flex justify-content-center"><img itemprop="img" src="images/sec1img3.png" alt="offline education" class="img-fluid"></div>
+                <div class="d-flex justify-content-center"><img itemprop="img" src="{{asset('images/website/sec1img3.png')}}" alt="offline education" class="img-fluid"></div>
                 <h3 class="text-white fs1-2rem fs-sm-1-6rem d-flex align-items-center justify-content-center workSansB">Offline Education</h3>
             </div>
         </div>
@@ -87,7 +86,7 @@
 <section id="sectionID2" class="container-fluid maxWidth mx-auto bg-imgSec2 d-lg-none p-0">
     <div class="row maxWidth1150 mx-auto sec2Row">
         <div class="col-12 col-lg-6">
-            <img itemprop="img" src="images/sec2img1.png" alt="video University" class="img-fluid">
+            <img itemprop="img" src="{{asset('images/website/sec2img1.png')}}" alt="video University" class="img-fluid">
         </div>
         <div class="col-12 col-lg-6">
             <h4 class="montserratB font-s-24 fs-md-40">Limitless learning, more possibilities</h4>
@@ -114,8 +113,8 @@
 <section class="container-fluid d-none d-lg-block p-0">
     <div class="row maxWidth mx-auto">
         <div class="col col-lg-6 col-xl-6 p-0">
-            <img itemprop="img" id="sec2ImgLg" src="images/sec2img1lg.png" alt="video University" class="d-xl-none">
-            <img itemprop="img" id="sec2ImgXl" src="images/sec2img1lg.png" alt="video University" class="d-none d-xl-block img-fluid">
+            <img itemprop="img" id="sec2ImgLg" src="{{asset('images/website/sec2img1lg.png')}}" alt="video University" class="d-xl-none">
+            <img itemprop="img" id="sec2ImgXl" src="{{asset('images/website/sec2img1lg.png')}}" alt="video University" class="d-none d-xl-block img-fluid">
         </div>
         <div id="sec2LgDivText" class="col col-lg-6 col-xl-4 pt-xl-5">
             <h4 class="montserratB fs-md-40">Limitless learning, more possibilities</h4>
@@ -150,7 +149,7 @@
     <div class="row p-2 p-sm-5 p-md-1">
         <div class="col-12 col-md-6 col-lg-3">
             <div class="card">
-                <img src="images/sec3img1.png" class="card-img-top" alt="photoshop">
+                <img src="{{asset('images/website/sec3img1.png')}}" class="card-img-top" alt="photoshop">
                 <div class="card-body p-3">
                     <h6 class="card-title worksansM colorDB">Photoshop CC Essential Training: The Basics</h6>
                     <p class="card-text robReg12">Graphic Design</p>
@@ -160,7 +159,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-3 mt-4 mt-md-0">
             <div class="card">
-                <img src="images/sec3img2.png" class="card-img-top" alt="android">
+                <img src="{{asset('images/website/sec3img2.png')}}" class="card-img-top" alt="android">
                 <div class="card-body p-3">
                     <h6 class="card-title worksansM colorDB">Get Started Coding Android Apps With Kotlin</h6>
                     <p class="card-text robReg12">Global System</p>
@@ -170,7 +169,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
             <div class="card">
-                <img src="images/sec3img3.png" class="card-img-top" alt="cinema 4d">
+                <img src="{{asset('images/website/sec3img3.png')}}" class="card-img-top" alt="cinema 4d">
                 <div class="card-body p-3">
                     <h6 class="card-title worksansM colorDB">Create Turntable Animations With Cinema 4D</h6>
                     <p class="card-text robReg12">Computer & Information Technology</p>
@@ -180,7 +179,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
             <div class="card">
-                <img itemprop="img" src="images/sec3img4.png" class="card-img-top" alt="bootstrap">
+                <img itemprop="img" src="{{asset('images/website/sec3img4.png')}}" class="card-img-top" alt="bootstrap">
                 <div class="card-body p-3">
                     <h6 class="card-title worksansM colorDB">A Beginner’s Guide to the  New Bootstrap 4 Grid</h6>
                     <p class="card-text robReg12">Web Development</p>
@@ -192,7 +191,7 @@
     <div class="row p-2 p-sm-5 p-md-1 mt-lg-3">
         <div class="col-12 col-md-6 col-lg-3">
             <div class="card">
-                <img src="images/sec3img5.png" class="card-img-top" alt="vue">
+                <img src="{{asset('images/website/sec3img5.png')}}" class="card-img-top" alt="vue">
                 <div class="card-body p-3">
                     <h6 class="card-title worksansM colorDB">A Designer’s Guide to Vue.js  Components</h6>
                     <p class="card-text robReg12">Art Deperments</p>
@@ -202,7 +201,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-3 mt-4 mt-md-0">
             <div class="card">
-                <img src="images/sec3img6.png" class="card-img-top" alt="swift">
+                <img src="{{asset('images/website/sec3img6.png')}}" class="card-img-top" alt="swift">
                 <div class="card-body p-3">
                     <h6 class="card-title worksansM colorDB">Code a Swift App With Realm  Mobile Database</h6>
                     <p class="card-text robReg12">Music</p>
@@ -212,7 +211,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
             <div class="card">
-                <img src="images/sec3img7.png" class="card-img-top" alt="adobe">
+                <img src="{{asset('images/website/sec3img7.png')}}" class="card-img-top" alt="adobe">
                 <div class="card-body p-3">
                     <h6 class="card-title worksansM colorDB">10 Essential Design Tips in  Adobe Illustrator</h6>
                     <p class="card-text robReg12">Technology Information</p>
@@ -222,7 +221,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
             <div class="card">
-                <img src="images/sec3img8.png" class="card-img-top" alt="php">
+                <img src="{{asset('images/website/sec3img8.png')}}" class="card-img-top" alt="php">
                 <div class="card-body p-3">
                     <h6 class="card-title worksansM colorDB">Modern PHP From The  Beginning</h6>
                     <p class="card-text robReg12">Data Science</p>
@@ -236,11 +235,11 @@
 <div class="container-fluid p-0">
     <div class="row maxWidth mx-auto">
         <div class="col d-flex justify-content-end p-0">
-            <img itemprop="img" id="imgbgHalveBolPositie" src="images/sec3bgIms.png" alt="background" class="img-fluid">
+            <img itemprop="img" id="imgbgHalveBolPositie" src="{{asset('images/website/sec3bgIms.png')}}" alt="background" class="img-fluid">
         </div>
     </div>
 </div>
-<a href="contact.html"><img src="images/contactSup.png" alt="support" class="d-none d-md-block d-md-flex justify-content-md-end mr-2 support"></a>
+<a href="contact.html"><img src="{{asset('images/website/contactSup.png')}}" alt="support" class="d-none d-md-block d-md-flex justify-content-md-end mr-2 support"></a>
 @include('includes.footer')
 </body>
 </html>

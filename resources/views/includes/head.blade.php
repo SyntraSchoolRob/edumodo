@@ -9,7 +9,7 @@
     <meta name="description" content="@yield('description')">
     <meta name="author" content="@yield('author')">
     <meta name="keywords" content="@yield('keywords')">
-    <link rel="icon" href="images/website/headerLogo.png">
+    <link rel="icon" type="image/png" href="{{asset('images/website/headerLogo.png')}}">
     <link rel="canonical" href="<?php echo url()->current(); ?>" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="website" />
