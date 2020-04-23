@@ -2,7 +2,7 @@
     <div class="maxWidth mx-auto bgfooter rounded-top">
         <div class="row maxWidth1150 mx-auto pt-5 pb-5">
             <div class="col-12 col-md-3">
-                <img itemprop="img" src="images/footer.png" alt="logo" class="img-fluid">
+                <img itemprop="img" src="{{asset('images/website/footer.png')}}" alt="logo" class="img-fluid">
                 <p class="pt-2 fs14">Edumodo focuses on creating magnificent education websites with ease. Take the lead in the race with learned</p>
             </div>
             <div class="col-6 col-sm-4 col-md-2">

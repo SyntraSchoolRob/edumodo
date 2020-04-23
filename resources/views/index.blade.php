@@ -7,6 +7,7 @@
 <body itemscope itemtype="https://schema.org/WebPage">
 <header class="p-0">
     <div class="bg-img maxWidth mx-auto">
+
         <nav class="navbar navbar-expand-lg navbar-light maxWidth1150 mx-auto bg-sm-Beige" itemscope itemtype="https://schema.org/SiteNavigationElement">
             <a itemprop="url" class="btn btnShop d-lg-none" href="shop.html">Shop</a>
             <a itemprop="url" class="navbar-brand" href="index.html"><img itemprop="image" src="{{asset('images/website/headerLogo.png')}}" alt="logo"></a>
@@ -45,7 +46,7 @@
                     <h1 itemprop="slogan" class="cBeige montserratB font-s-24 fs-39">Innovation for education and society</h1>
                     <p itemprop="description" id="pHead" class="myrProReg">Our interdisciplinary majors and minors mean you can
                         chart your own course for academic success.</p>
-                    <a class="btn" id="buttonHead" href="shop.html">Visit Our Campus</a>
+                    <a class="btn" id="buttonHead" href="{{route('index')}}">Visit Our Campus</a>
                 </div>
                 <div class="col-12 col-sm-4 col-md-5 col-lg-6 p-0">
                     <img src="{{asset('images/website/homeMobile.png')}}" alt="edumodo university" class="img-fluid d-sm-none">
