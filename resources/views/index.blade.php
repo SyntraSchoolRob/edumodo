@@ -208,7 +208,7 @@
         </div>
     </div>
 </div>
-<a href="contact.html"><img src="{{asset('images/website/contactSup.png')}}" alt="support" class="d-none d-md-block d-md-flex justify-content-md-end mr-2 support"></a>
+<a href="{{route('contact')}}"><img src="{{asset('images/website/contactSup.png')}}" alt="support" class="d-none d-md-block d-md-flex justify-content-md-end mr-2 support"></a>
 @include('includes.footer')
 </body>
 </html>
