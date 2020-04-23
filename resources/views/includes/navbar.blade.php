@@ -13,7 +13,7 @@
                 <a itemprop="url" class="nav-link menuStyle" href="{{route('login')}}">Account</a>
             </li>
             <li class="nav-item pl-lg-1">
-                <a itemprop="url" class="nav-link menuStyle" href="">Product</a>
+                <a itemprop="url" class="nav-link menuStyle" href="{{route('product', ['id'=>4])}}">Product</a>
             </li>
             <li class="nav-item pl-lg-1">
                 <a itemprop="url" class="nav-link menuStyle" href="{{route('checkout')}}">Checkout</a>
@@ -25,7 +25,7 @@
                 <a itemprop="url" class="btn btnShop d-none d-lg-block" href="{{route('shop')}}">Shop</a>
             </li>
             <li class="nav-item">
-                <a itemprop="url" class="nav-link menuStyle" href="cart.html">Cart <i class="fas fa-shopping-basket"><span class="badge ">2</span></i></a>
+                <a itemprop="url" class="nav-link menuStyle" href="{{route('cart')}}">Cart <i class="fas fa-shopping-basket"><span class="badge ">2</span></i></a>
             </li>
         </ul>
     </div>

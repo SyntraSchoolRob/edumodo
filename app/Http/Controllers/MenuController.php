@@ -17,6 +17,13 @@ class MenuController extends Controller
         $product = Product::findOrFail($id);
         return view('product', compact('product'));
     }
-
+    public function contact()
+    {
+        return view('contact');
+    }
+    public function cart()
+    {
+        return view('cart');
+    }
 
 }
