@@ -16,10 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {return view('index'); })->name('index');
 
-
-
 Auth::routes();
-
 Route::group(['middleware' => 'admin'], function(){
     Route::get('/admin', function(){
         return view('admin.index');
@@ -38,5 +35,5 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('/admin/schooltypes', 'AdminSchoolTypesController');
 });
 
-//FRONT ROUTES
+//front_end
 Route::get('/post/{slug}', 'AdminPostsController@post')->name('home.post');
