@@ -7,19 +7,19 @@
             </div>
             <div class="col-6 col-sm-4 col-md-2">
                 <p class="text-white footGray fs1-2rem">Community</p>
-                <a itemprop="url" class="footpGray" href="index.html"><p>Home</p></a>
-                <a itemprop="url" class="footpGray" href="account.html"><p>Account</p></a>
+                <a itemprop="url" class="footpGray" href="{{route('index')}}"><p>Home</p></a>
+                <a itemprop="url" class="footpGray" href="{{route('login')}}"><p>Account</p></a>
             </div>
             <div class="col-6 col-sm-4 col-md-2">
                 <p class="text-white footGray fs1-2rem">Shop</p>
-                <a itemprop="url" class="footpGray" href="shop.html"><p>Go shopping</p></a>
-                <a itemprop="url" class="footpGray" href="product.html"><p>Product</p></a>
-                <a itemprop="url" class="footpGray" href="checkout.html"><p>Checkout</p></a>
+                <a itemprop="url" class="footpGray" href="{{route('shop')}}"><p>Go shopping</p></a>
+                <a itemprop="url" class="footpGray" href="{{route('product', ['id'=>4])}}"><p>Product</p></a>
+                <a itemprop="url" class="footpGray" href="{{route('checkout')}}"><p>Checkout</p></a>
             </div>
             <div class="col-12 col-sm-4 col-md-2">
                 <p class="text-white footGray fs1-2rem">Support</p>
-                <a itemprop="url" class="footpGray" href="contact.html"><p>Get help</p></a>
-                <a itemprop="url" class="footpGray" href="cart.html"><p>Shoppingcart</p></a>
+                <a itemprop="url" class="footpGray" href="{{route('contact')}}"><p>Get help</p></a>
+                <a itemprop="url" class="footpGray" href="{{route('cart')}}"><p>Shoppingcart</p></a>
             </div>
             <div class="col-12 col-md-3">
                 <div class="content">

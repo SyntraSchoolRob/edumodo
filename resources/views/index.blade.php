@@ -14,7 +14,7 @@
                     <h1 itemprop="slogan" class="cBeige montserratB font-s-24 fs-39">Innovation for education and society</h1>
                     <p itemprop="description" id="pHead" class="myrProReg">Our interdisciplinary majors and minors mean you can
                         chart your own course for academic success.</p>
-                    <a class="btn" id="buttonHead" href="{{route('index')}}">Visit Our Campus</a>
+                    <a class="btn" id="buttonHead" href="{{route('shop')}}">Visit Our Campus</a>
                 </div>
                 <div class="col-12 col-sm-4 col-md-5 col-lg-6 p-0">
                     <img src="{{asset('images/website/homeMobile.png')}}" alt="edumodo university" class="img-fluid d-sm-none">

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light maxWidth1150 mx-auto" itemscope itemtype="https://schema.org/SiteNavigationElement">
-    <a itemprop="url" class="btn btnShop d-lg-none" href="shop.html">Shop</a>
-    <a itemprop="url" class="navbar-brand" href="index.html"><img itemprop="image" src="images/headerLogo.png" alt="logo"></a>
+    <a itemprop="url" class="btn btnShop d-lg-none" href="{{route('shop')}}">Shop</a>
+    <a itemprop="url" class="navbar-brand" href="{{route('index')}}"><img itemprop="image" src="images/headerLogo.png" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
