@@ -17,5 +17,5 @@
     <meta property="og:description" content="@yield('description')" />
     <meta property="og:url" content="<?php echo url()->current(); ?>" />
     <meta property="og:site_name" content="Edumodo" />
-    <link href="{{asset('front_end-app.css')}}" rel="stylesheet"></head>
+    <link href="{{asset('css/front_end-app.css')}}" rel="stylesheet"></head>
 </head>
