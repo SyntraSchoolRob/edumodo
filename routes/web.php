@@ -33,11 +33,13 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('/admin/orders', 'AdminOrdersController');
     Route::resource('/admin/products', 'AdminProductsController');
     Route::resource('/admin/schooltypes', 'AdminSchoolTypesController');
+    Route::resource('/admin/contact', 'AdminContactsController');
 });
 
 //front_end
-
-// Route::get('/product/{id}', 'MenuController@product')->name('product');
-Route::get('/checkout', 'CheckoutController@index')->name('checkout');
-
+Route::get('shop', 'MenuController@shop')->name('shop');
+Route::get('product/{id}', 'MenuController@product')->name('product');
+Route::get('contact', 'MenuController@contact')->name('contact');
+Route::get('checkout', 'CheckoutController@index')->name('checkout');
+Route::get('cart', 'MenuController@cart')->name('cart');
 

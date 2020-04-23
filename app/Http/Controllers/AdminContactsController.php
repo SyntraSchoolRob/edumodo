@@ -2,21 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
 use Illuminate\Http\Request;
 
-class AdminProductsController extends Controller
+class AdminContactsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    public function view()
+    {
+
+    }
     public function index()
     {
         //
-
-        return view('admin.products.index');
+        return view('contact');
     }
 
     /**
@@ -27,8 +29,6 @@ class AdminProductsController extends Controller
     public function create()
     {
         //
-
-        return view('admin.products.create');
     }
 
     /**
@@ -43,16 +43,13 @@ class AdminProductsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display contact page in front-end.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         //
-        $product = Product::findOrFail($id);
-        return view('product', compact('product'));
+        return view('contact');
     }
 
     /**
@@ -64,8 +61,6 @@ class AdminProductsController extends Controller
     public function edit($id)
     {
         //
-        $product = Product::findOrFail($id);
-        return view('admin.products.edit', compact('product'));
     }
 
     /**
@@ -89,8 +84,5 @@ class AdminProductsController extends Controller
     public function destroy($id)
     {
         //
-        unlink(public_path(). $product->photo->file);
-        $product->delete();
-        return redirect('admin/products');
     }
 }

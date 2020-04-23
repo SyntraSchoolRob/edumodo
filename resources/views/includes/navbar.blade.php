@@ -19,10 +19,10 @@
                 <a itemprop="url" class="nav-link menuStyle" href="{{route('checkout')}}">Checkout</a>
             </li>
             <li class="nav-item pl-lg-1">
-                <a itemprop="url" class="nav-link menuStyle" href="contact.html">Contact</a>
+                <a itemprop="url" class="nav-link menuStyle" href="{{route('contact')}}">Contact</a>
             </li>
             <li class="nav-item pl-lg-1">
-                <a itemprop="url" class="btn btnShop d-none d-lg-block" href="shop.html">Shop</a>
+                <a itemprop="url" class="btn btnShop d-none d-lg-block" href="{{route('shop')}}">Shop</a>
             </li>
             <li class="nav-item">
                 <a itemprop="url" class="nav-link menuStyle" href="cart.html">Cart <i class="fas fa-shopping-basket"><span class="badge ">2</span></i></a>
