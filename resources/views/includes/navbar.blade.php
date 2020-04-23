@@ -10,10 +10,10 @@
                 <a itemprop="url" class="nav-link menuStyle" href="{{route('index')}}">Home</a>
             </li>
             <li class="nav-item pl-lg-1">
-                <a itemprop="url" class="nav-link menuStyle" href="account.html">Account</a>
+                <a itemprop="url" class="nav-link menuStyle" href="{{route('login')}}">Account</a>
             </li>
             <li class="nav-item pl-lg-1">
-                <a itemprop="url" class="nav-link menuStyle" href="product.html">Product</a>
+                <a itemprop="url" class="nav-link menuStyle" href="">Product</a>
             </li>
             <li class="nav-item pl-lg-1">
                 <a itemprop="url" class="nav-link menuStyle" href="checkout.html">Checkout</a>

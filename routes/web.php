@@ -36,4 +36,6 @@ Route::group(['middleware' => 'admin'], function(){
 });
 
 //front_end
-Route::get('/post/{slug}', 'AdminPostsController@post')->name('home.post');
+
+// Route::get('/product/{id}', 'MenuController@product')->name('product');
+
