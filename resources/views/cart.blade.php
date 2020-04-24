@@ -143,7 +143,7 @@
     </div>
     <a href="{{route('contact')}}"><img src="{{asset('images/website/contactSup.png')}}" alt="support" class="d-none d-md-block d-md-flex justify-content-md-end mr-2 support"></a>
     @include('includes.footer')
-    <script src="js/front_end-app.js"></script>
+    <script src="{{asset('js/front_end-app.js')}}"></script>
     </body>
     </html>
 @endsection

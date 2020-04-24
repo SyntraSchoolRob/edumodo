@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="robots" content="noindex, follow">
     <title>Edumodo - 404</title>
-    <link rel="icon" href="images/website/headerLogo.png">
+    <link rel="icon" href="{{asset('images/website/headerLogo.png')}}">
     <link href="{{asset('css/front_end-app.css')}}" rel="stylesheet">
 </head>
 <body itemscope itemtype="https://schema.org/WebPage" class="bg-Beige">
@@ -33,6 +33,6 @@
 </div>
 <a href="contact.html"><img src="{{asset('images/website/contactSup.png')}}" alt="support" class="d-none d-md-block d-md-flex justify-content-md-end mr-2 support"></a>
 @include('includes.footer')
-<script src="app.js"></script>
+<script src="{{asset('js/front_end-app.js')}}"></script>
 </body>
 </html>
