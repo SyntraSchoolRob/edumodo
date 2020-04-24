@@ -64,6 +64,7 @@
         </div>
     </section>
     @include('includes.footer')
+    <script src="js/front_end-app.js"></script>
 </body>
 </html>
 @endsection
