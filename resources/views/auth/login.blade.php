@@ -44,6 +44,7 @@
                     </div>
                 </form>
             </div>
+
             <div class="col-12 col-md-6 p-2">
                 <p class="bg-light rounded-pill pl-4 p-3 text-uppercase font-weight-bold"><i class="fas fa-users pr-2"></i>Join the family</p>
                 <div class="pt-2 px-4 pb-4">
@@ -88,4 +89,3 @@
     </body>
     </html>
 @endsection
-
