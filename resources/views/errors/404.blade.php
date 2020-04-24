@@ -17,7 +17,7 @@
 <div class="maxWidth1150 mx-auto errorPage">
     <div class="row">
         <div class="col d-flex justify-content-center">
-            <a href="index.html"><img src="images/headerLogo.png" alt="logo" height="150"></a>
+            <a href="{{route('index')}}"><img src="{{asset('images/website/headerLogo.png')}}" alt="logo" height="150"></a>
         </div>
     </div>
     <div class="row">
@@ -27,7 +27,7 @@
     </div>
     <div class="row">
         <div class="col d-flex justify-content-center">
-            <a href="index.html" class="c5a9 hline"><p>Go back to our home page <i class="fas fa-arrow-right pl-2"></i></p></a>
+            <a href="{{route('index')}}" class="c5a9 hline"><p>Go back to our home page <i class="fas fa-arrow-right pl-2"></i></p></a>
         </div>
     </div>
 </div>
