@@ -40,7 +40,7 @@
                         <label class="form-check-label checked" for="signinKeep">{{ __('Keep me signed in') }}</label>
                     </div>
                     <div class="form-group pr-md-5">
-                        <button class="btn btn-dark rounded-pill py-2 btn-block mt-4">{{ __('Login') }} <i class="fas fa-sign-in-alt pl-2"></i></button>
+                        <button class="btn btn-dark rounded-pill py-2 btn-block mt-4">{{ __('Sign in') }} <i class="fas fa-sign-in-alt pl-2"></i></button>
                     </div>
                 </form>
             </div>
@@ -48,7 +48,8 @@
                 <p class="bg-light rounded-pill pl-4 p-3 text-uppercase font-weight-bold"><i class="fas fa-users pr-2"></i>Join the family</p>
                 <div class="pt-2 px-4 pb-4">
                     <p class="font-italic mb-4">Register here and discover why millions of people are already using the software of Edumodo to get the best results.</p>
-                    <form class="pt-2 pb-4 pr-md-5">
+                    <form class="pt-2 pb-4 pr-md-5" method="POST" action="{{ route('register') }}">
+                        @csrf
                         <div class="d-sm-flex">
                             <div class="form-group">
                                 <label for="regFirstN" class="pl-2"><i class="fas fa-address-card pr-2"></i>First name</label>
@@ -68,7 +69,10 @@
                             <input type="password" class="form-control rounded-pill d-block" id="regP" placeholder="Must be at least 9 characters">
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="terms">
+                            <input class="form-check-input" type="checkbox" value="" id="terms" required>
+                            <div class="invalid-feedback">
+                                You must agree to our terms & conditions.
+                            </div>
                             <label class="form-check-label" for="terms">I have read and agree to the websites <span class="underline">terms and conditions</span> and our <span class="underline"> privacy policy</span></label>
                         </div>
                         <div class="pr-md-5">
