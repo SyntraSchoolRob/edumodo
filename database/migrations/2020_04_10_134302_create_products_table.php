@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('schooltype_id')->index();
             $table->unsignedBigInteger('photo_id')->index();
             $table->string('title');
-            $table->decimal('price', 8, 2);
+            $table->decimal('price', 8, 2)->default(0);
             $table->text('description');
             $table->string('slug');
             $table->timestamps();
