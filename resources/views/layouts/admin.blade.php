@@ -43,7 +43,7 @@
             Shop
         </div>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('posts.index')}}">
+            <a class="nav-link" href="{{route('products.index')}}">
                 <i class="fas fa-store"></i>
                 <span>Products</span>
             </a>
@@ -56,7 +56,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="{{route('categories.index')}}">
+            <a class="nav-link" href="{{route('schooltypes.index')}}">
                 <i class="fas fa-graduation-cap"></i>
                 <span>School-types</span>
             </a>

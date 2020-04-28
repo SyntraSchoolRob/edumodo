@@ -14,17 +14,17 @@ class SchoolTypesTableSeeder extends Seeder
     {
         //
         DB::table('schooltypes')->insert([
-            'type'=>'primary',
+            'type'=>'Primary',
             'created_at'=>now(),
             'updated_at'=>now(),
         ]);
         DB::table('schooltypes')->insert([
-            'type'=>'secondary',
+            'type'=>'Secondary',
             'created_at'=>now(),
             'updated_at'=>now(),
         ]);
         DB::table('schooltypes')->insert([
-            'type'=>'university',
+            'type'=>'University',
             'created_at'=>now(),
             'updated_at'=>now(),
         ]);

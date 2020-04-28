@@ -15,6 +15,11 @@
                 {!! Form::submit('Update schooltype', ['class'=>'btn btn-warning rounded-pill']) !!}
             </div>
             {!! Form::close() !!}
+            {!! Form::open(['method'=>'DELETE', 'action'=>['AdminSchoolTypesController@destroy',$schooltype->id] ]) !!}
+            <div class="form-group">
+                {!! Form::submit('Delete schooltype', ['class' => 'btn btn-danger rounded-pill']) !!}
+            </div>
+            {!! Form::close() !!}
         </div>
     </div>
 @endsection
