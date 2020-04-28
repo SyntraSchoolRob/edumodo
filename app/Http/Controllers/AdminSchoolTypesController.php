@@ -58,7 +58,8 @@ class AdminSchoolTypesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $schooltype = Schooltype::findOrFail($id);
+        return view('admin.schooltypes.edit', compact('schooltype'));
     }
 
     /**
@@ -70,7 +71,9 @@ class AdminSchoolTypesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $schooltype = Schooltype::findOrFail($id);
+        $schooltype->update($request->all());
+        return redirect('/admin/schooltypes');
     }
 
     /**
