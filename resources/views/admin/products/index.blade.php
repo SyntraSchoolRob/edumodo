@@ -33,7 +33,9 @@
                     <td>{{$product->category ? $product->category->name : 'not categorized'}}</td>
                     <td>{{$product->schooltype ? $product->schooltype->type : 'no type'}}</td>
                     <td>{{$product->created_at}}</td>
-                    <td>update</td>
+                    <td>
+
+                    </td>
                 </tr>
             @endforeach
         @endif
