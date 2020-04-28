@@ -17,9 +17,9 @@
             <th scope="row">Title</th>
             <th scope="row">Category</th>
             <th scope="row">Schooltype</th>
-            <th scope="row">$USD Price</th>
-            <th scope="row">Created at</th>
-            <th scope="row">Updated at</th>
+            <th scope="row">Price</th>
+            <th scope="row">Created</th>
+            <th scope="row">Updated</th>
             <th scope="row">Actions</th>
         </tr>
         </thead>

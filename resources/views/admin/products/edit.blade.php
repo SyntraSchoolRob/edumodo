@@ -17,8 +17,8 @@
                         {!! Form::text('title', $product->title,['class'=>'form-control rounded-pill']) !!}
                     </div>
                     <div class="form-group ml-md-5">
-                        {!! Form::label('last_name', 'Last name:') !!}
-                        {!! Form::text('last_name', $product->last_name,['class'=>'form-control rounded-pill']) !!}
+                        {!! Form::label('price', 'Price $USD :') !!}
+                        {!! Form::number('price', $product->price,['class'=>'form-control rounded-pill']) !!}
                     </div>
                 </div>
                 <div class="form-group">
@@ -57,7 +57,7 @@
                 </div>
             </div>
             <div class="col-4">
-                <img width="185" height="185" class="img-fluid rounded" src="{{$product->photo ? asset($product->photo->file) : asset('images/userImage.png') }}" alt="user image">
+                <img width="185" height="200" class="img-fluid rounded" src="{{$product->photo ? asset($product->photo->file) : asset('images/website/shopImg.png') }}" alt="product image">
             </div>
         </div>
     </div>
