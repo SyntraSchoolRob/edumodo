@@ -2,6 +2,9 @@
 #this file contains a log of all worked sessions
 ##sessions are logged manually with a stopwatch
 ------
+Tuesday 28Apr 2020
+--total time =
+
 Sunday 26Apr 2020
 -- total time = 4 hours
 

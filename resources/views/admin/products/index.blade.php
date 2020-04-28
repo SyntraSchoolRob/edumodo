@@ -6,10 +6,10 @@
     <div class="col-12">
         <h1>Shop - All Products</h1>
     </div>
-    <div class="col-12">
+    <div class="col-12 mb-4">
         <a class="btn btn-success rounded-pill mb-2" href="{{route('products.create')}}">New Product</a>
     </div>
-    <table id="myTable" class="display" style="width:100%">
+    <table id="" class="display" style="width:100%">
         <thead>
         <tr>
             <th scope="row">Id</th>
@@ -27,8 +27,8 @@
                 <tr>
                     <td>{{$product->id}}</td>
                     <td>
-                        <img height="62" width="62"
-                             src="{{$product->photo ? asset($product->photo->file) : 'http://placehold.it/62x62'}}" alt="product image" class="rounded">
+                        <img height="75" width="68"
+                             src="{{$product->photo ? asset($product->photo->file) : asset('images/website/shopImg.png') }}" alt="product image" class="rounded">
                     </td>
                     <td>{{$product->title}}</td>
                     <td>
