@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Schooltype;
 use Illuminate\Http\Request;
 
 class AdminSchoolTypesController extends Controller
@@ -13,7 +14,8 @@ class AdminSchoolTypesController extends Controller
      */
     public function index()
     {
-        //
+        $schooltypes = Schooltype::paginate(50);
+        return view('admin.schooltypes.index', compact('schooltypes'));
     }
 
     /**
