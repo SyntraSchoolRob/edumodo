@@ -6,12 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Schooltype extends Model
 {
-    //
     protected $fillable = [
         'type',
     ];
 
-    public function products(){
-        return $this->hasMany('App\Product');
+    public function products() {
+        return $this->hasMany(Product::class);
     }
 }

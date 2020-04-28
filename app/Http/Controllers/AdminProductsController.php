@@ -14,9 +14,9 @@ class AdminProductsController extends Controller
      */
     public function index()
     {
-        //
-
-        return view('admin.products.index');
+        $products = Product::with(['schooltype','photo', 'category'])
+            ->paginate(50);
+        return view('admin.products.index', compact('products'));
     }
 
     /**

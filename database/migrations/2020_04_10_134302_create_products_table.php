@@ -24,9 +24,9 @@ class CreateProductsTable extends Migration
             $table->string('slug');
             $table->timestamps();
 
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->foreign('schooltype_id')->references('id')->on('schooltypes')->onDelete('cascade');
-            //$table->foreign('photo_id')->references('id')->on('photos')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('schooltype_id')->references('id')->on('schooltypes');
+            $table->foreign('photo_id')->references('id')->on('photos')->onDelete('cascade');
         });
 
     }

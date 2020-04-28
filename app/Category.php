@@ -14,8 +14,8 @@ class Category extends Model
     public function posts(){
         return $this->hasMany('App\Post');
     }
-    public function products(){
-        return $this->hasMany('App\Product');
+    public function products() {
+        return $this->hasMany(Product::class);
     }
 
 

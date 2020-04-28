@@ -11,15 +11,17 @@ class Product extends Model
         'category_id', 'schooltype_id', 'photo_id', 'title', 'price', 'description', 'slug',
     ];
 
-
+    public function photo() {
+        return $this->belongsTo(Photo::class);
+    }
     public function orders(){
         return $this->belongsToMany('App\Order', 'order_details');
     }
-    public function categories(){
-        return $this->hasMany('App\Category');
+    public function schooltype() {
+        return $this->belongsTo(Schooltype::class);
     }
-    public function schooltypes(){
-        return $this->hasMany('App\Schooltype');
+    public function category() {
+        return $this->belongsTo(Category::class);
     }
 }
 
