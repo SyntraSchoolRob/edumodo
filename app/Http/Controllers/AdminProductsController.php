@@ -91,12 +91,9 @@ class AdminProductsController extends Controller
             $photo = Photo::create(['file'=>$name]);
             $input['photo_id'] = $photo->id;
         }
-        //dd(Auth::user()->posts()->whereId($id)->first());
         $input['slug'] = Str::slug($request->title,'-');
-        $post->update($input);
-
-        return redirect('admin/posts');
-
+        $product->update($input);
+        return redirect('admin/products');
     }
 
     /**
