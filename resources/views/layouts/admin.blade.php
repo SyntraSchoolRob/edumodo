@@ -9,9 +9,8 @@
     <meta name="robots" content="noindex" />
     <title>@yield('title')</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link href="" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link href="{{asset('css/sb-admin-2.css')}}" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
     @yield('styles')
 </head>
 <body id="page-top">
@@ -89,9 +88,6 @@
             </a>
         </li>
         <hr class="sidebar-divider d-none d-md-block">
-        <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
-        </div>
     </ul>
     <div id="content-wrapper" class="d-flex flex-column">
         <div id="content">
@@ -241,12 +237,12 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-primary" href="{{route('logout')}}">Logout</a>
             </div>
         </div>
     </div>
 </div>
-<script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
+{{--<script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/popper.min.js')}}"></script>
 <script src="{{asset('js/jquery.easing.js')}}"></script>
@@ -255,7 +251,8 @@
 <script src="{{asset('js/chart-area-demo.js')}}"></script>
 <script src="{{asset('js/chart-pie-demo.js')}}"></script>
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
-<script src="{{asset('js/mijnscript.js')}}"></script>
+<script src="{{asset('js/mijnscript.js')}}"></script>--}}
+<script src="{{asset('js/app.js')}}"></script>
 @yield('scripts')
 </body>
 </html>

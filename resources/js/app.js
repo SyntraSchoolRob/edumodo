@@ -4,7 +4,26 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+//require('./bootstrap');
+//require('../../resources/assets/admin_assets/js/active.js');
+require('../../resources/assets/admin_assets/js/bootstrap.min.js');
+//fonts= chart bundle
+require('../../resources/assets/admin_assets/js/Chart.bundle.js');
+require('../../resources/assets/admin_assets/js/Chart.js');
+require('../../resources/assets/admin_assets/js/chart-area-demo.js');
+require('../../resources/assets/admin_assets/js/chart-bar-demo.js');
+require('../../resources/assets/admin_assets/js/chart-pie-demo.js');
+
+//require('../../resources/assets/admin_assets/js/datatables-demo.js');
+//require('../../resources/assets/admin_assets/js/jquery.easing.compatibility.js');
+require('../../resources/assets/admin_assets/js/jquery.easing.js');
+require('../../resources/assets/admin_assets/js/jquery-2.2.4.min.js');
+
+//require('../../resources/assets/admin_assets/js/map-active.js');
+require('../../resources/assets/admin_assets/js/mijnscript.js');
+//require('../../resources/assets/admin_assets/js/plugins.js');
+require('../../resources/assets/admin_assets/js/popper.min.js');
+require('../../resources/assets/admin_assets/js/sb-admin-2.js');
 
 window.Vue = require('vue');
 
