@@ -14,45 +14,46 @@
                 <div class="d-md-flex">
                     <div class="form-group">
                         {!! Form::label('title', 'Title:') !!}
-                        {!! Form::text('title', $product->title,['class'=>'form-control rounded-pill']) !!}
+                        {!! Form::text('title', $product->title,['class'=>'form-control rounded']) !!}
                     </div>
                     <div class="form-group ml-md-5">
                         {!! Form::label('price', 'Price $USD :') !!}
-                        {!! Form::number('price', $product->price,['class'=>'form-control rounded-pill']) !!}
+                        {!! Form::number('price', $product->price,['class'=>'form-control rounded']) !!}
                     </div>
                 </div>
                 <div class="form-group">
-                    {!! Form::label('email', 'E-mail:') !!}
-                    {!! Form::text('email', $product->email,['class'=>'form-control rounded-pill']) !!}
+                    {!! Form::label('description', 'Description:') !!}
+                    {!! Form::textarea('description', $product->description,['class'=>'form-control rounded']) !!}
                 </div>
-                @if($product->id != 1 and $product->id != 2)
+                <div class="d-xl-flex">
                     <div class="form-group">
-                        {!! Form::label('roles[]', 'Role:') !!}
-                        {!! Form::select('roles[]',$roles, $product->roles->pluck('id')->toArray(),['class'=>'form-control', 'multiple'=>'multiple']) !!}
+                        {!! Form::label('category_id', 'Category:') !!}
+                        {!! Form::select('category_id', [''=>'Choose Category'] + $categories, null, ['class'=>'form-control']) !!}
                     </div>
-                @endif
+                    <div class="form-group ml-xl-5">
+                        {!! Form::label('schooltype_id', 'Schooltype:') !!}
+                        {!! Form::select('schooltype_id', [''=>'Choose Schooltype'] + $schooltypes, null, ['class'=>'form-control']) !!}
+                    </div>
+                </div>
                 <div class="form-group">
-                    {!! Form::label('password', 'Password:') !!}
-                    {!! Form::password('password',['class'=>'form-control rounded-pill']) !!}
+                    {!! Form::label('slug', 'Slug:') !!}
+                    {!! Form::text('slug',$product->slug,['class'=>'form-control rounded']) !!}
                 </div>
                 <div class="form-group">
                     {!! Form::label('photo_id', 'Photo:') !!}
-                    {!! Form::file('photo_id',null,['class'=>'form-control rounded-pill']) !!}
+                    {!! Form::file('photo_id',null,['class'=>'form-control rounded']) !!}
                 </div>
                 <div class="row">
                     <div class="col-12 d-flex">
                         <div class="form-group mr-3">
-                            {!! Form::submit('Update user', ['class' => 'btn btn-warning rounded-pill']) !!}
+                            {!! Form::submit('Update product', ['class' => 'btn btn-warning rounded-pill']) !!}
                         </div>
                         {!! Form::close() !!}
-
-                        @if($product->id != 1 and $product->id !=2)
-                            {!! Form::open(['method'=>'DELETE', 'action'=>['AdminUsersController@destroy', $product->id] ]) !!}
-                            <div class="form-group">
-                                {!! Form::submit('Delete user', ['class' => 'btn btn-danger rounded-pill']) !!}
-                            </div>
-                            {!! Form::close() !!}
-                        @endif
+                        {!! Form::open(['method'=>'DELETE', 'action'=>['AdminProductsController@destroy', $product->id] ]) !!}
+                        <div class="form-group">
+                            {!! Form::submit('Delete product', ['class' => 'btn btn-danger rounded-pill']) !!}
+                        </div>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>
@@ -61,7 +62,5 @@
             </div>
         </div>
     </div>
-
-
 @endsection
 
