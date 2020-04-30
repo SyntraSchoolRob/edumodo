@@ -4,6 +4,11 @@
 @endsection
 @section('content')
     <div class="col-12">
+        @if($user->email_verified_at != null)
+        <p><span class="badge badge-pill badge-success">e-mail-verified</span></p>
+        @else
+        <p><span class="badge badge-pill badge-danger">e-mail not verified</span></p>
+        @endif
         <h1>Edit {{ $user->first_name.' '.$user->last_name }}</h1>
     </div>
     <div class="col-12">
