@@ -28,11 +28,11 @@
                 <div class="d-xl-flex">
                     <div class="form-group">
                         {!! Form::label('category_id', 'Category:') !!}
-                        {!! Form::select('category_id', [''=>'Choose Category'] + $categories, null, ['class'=>'form-control']) !!}
+                        {!! Form::select('category_id', ['Choose Category'=> $categories], $product->category->id, ['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group ml-xl-5">
                         {!! Form::label('schooltype_id', 'Schooltype:') !!}
-                        {!! Form::select('schooltype_id', [''=>'Choose Schooltype'] + $schooltypes, null, ['class'=>'form-control']) !!}
+                        {!! Form::select('schooltype_id', ['Choose Schooltype'=> $schooltypes], $product->schooltype->id, ['class'=>'form-control']) !!}
                     </div>
                 </div>
                 <div class="form-group">

@@ -52,9 +52,7 @@ class AdminProductsController extends Controller
             $input['photo_id'] = $photo->id;
         }
         $input['slug'] = Str::slug($request->title,'-');
-
         Product::create($input);
-
         return redirect('/admin/products');
     }
 

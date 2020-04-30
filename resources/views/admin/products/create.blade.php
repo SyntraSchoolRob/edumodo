@@ -20,7 +20,7 @@
             <div class="d-xl-flex">
                 <div class="form-group">
                     {!! Form::label('category_id', 'Category:') !!}
-                    {!! Form::select('category_id', [''=>'Choose Category'] + $categories, null, ['class'=>'form-control']) !!}
+                    {!! Form::select('category_id', [''=> $categories], 2, ['class'=>'form-control']) !!}
                 </div>
                 <div class="form-group ml-xl-5">
                     {!! Form::label('schooltype_id', 'Schooltype:') !!}
