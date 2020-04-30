@@ -38,13 +38,8 @@
                                     </span>
                         @endif
                         <input id="password-confirm" type="password" class="form-control mb-3" name="password_confirmation" placeholder="Bevestig je paswoord" required>
-
-
-
                 <button class="btn btn-dark text-uppercase" type="submit">account aanmaken</button>
                 </form>
-
-
                 </div>
             </div>
         </div>

@@ -28,8 +28,8 @@
                     </div>
                     <div class="form-group pr-md-5">
                         <label for="signinPass" class="pl-2"><i class="fas fa-lock pr-2"></i>Password</label>
-                        <input type="password" class="form-control rounded-pill d-block @error('password') is-invalid @enderror" id="signinPass" placeholder="Password" name="password" required autocomplete="current-password">
-                        @error('password')
+                        <input type="password" class="form-control rounded-pill d-block @error('signinPass') is-invalid @enderror" id="signinPass" placeholder="Password" name="password" required autocomplete="current-password">
+                        @error('signinPass')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -53,22 +53,43 @@
                         @csrf
                         <div class="d-sm-flex">
                             <div class="form-group">
-                                <label for="regFirstN" class="pl-2"><i class="fas fa-address-card pr-2"></i>First name</label>
-                                <input type="text" class="form-control rounded-pill" id="regFirstN" placeholder="Name">
+                                <label for="first_name" class="pl-2"><i class="fas fa-address-card pr-2"></i>First name</label>
+                                <input type="text" class="form-control rounded-pill{{ $errors->has('first_name') ? ' is-invalid' : '' }}" id="first_name" name="first_name" placeholder="Name" value="{{ old('first_name') }}" required>
+                                @if ($errors->has('first_name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('first_name') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="form-group pl-sm-3">
-                                <label for="regLastN" class="pl-2">Last name</label>
-                                <input type="text" class="form-control rounded-pill d-block" id="regLastN" placeholder="xxx">
+                                <label for="last_name" class="pl-2">Last name</label>
+                                <input type="text" class="form-control rounded-pill d-block{{ $errors->has('last_name') ? ' is-invalid' : '' }}" id="last_name" name="last_name" placeholder="xxx" value="{{ old('last_name') }}" required>
+                                @if ($errors->has('last_name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('last_name') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
                         <div class="form-group pr-md-5 mt-2 pb-2">
-                            <label for="regEM" class="pl-2"><i class="fas fa-envelope pr-2"></i>Email-address</label>
-                            <input type="email" class="form-control rounded-pill" id="regEM" placeholder="you@example.com">
+                            <label for="email" class="pl-2"><i class="fas fa-envelope pr-2"></i>Email-address</label>
+                            <input type="email" class="form-control rounded-pill{{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" name="email" placeholder="you@example.com" value="{{ old('email') }}" required>
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                         <div class="form-group pr-md-5">
-                            <label for="regP" class="pl-2"><i class="fas fa-lock pr-2"></i>Password</label>
-                            <input type="password" class="form-control rounded-pill d-block" id="regP" placeholder="Must be at least 9 characters">
+                            <label for="password" class="pl-2"><i class="fas fa-lock pr-2"></i>Password</label>
+                            <input type="password" class="form-control rounded-pill d-block{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password" placeholder="Must be at least 9 characters" name="password" required>
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
                         </div>
+{{--                        <input id="password-confirm" type="password" class="form-control mb-3" name="password_confirmation" placeholder="Confirm password" required>--}}
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="terms" required>
                             <div class="invalid-feedback">

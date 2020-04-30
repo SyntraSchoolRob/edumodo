@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Photo;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class MenuController extends Controller
 {

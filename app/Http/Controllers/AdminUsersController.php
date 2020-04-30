@@ -22,7 +22,7 @@ class AdminUsersController extends Controller
     {
         $users = User::with(['photo','roles'])
             ->withTrashed()
-            ->paginate(25);
+            ->paginate(50);
         return view('admin.users.index', compact('users'));
     }
 
