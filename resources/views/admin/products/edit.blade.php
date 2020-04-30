@@ -14,25 +14,25 @@
                 <div class="d-md-flex">
                     <div class="form-group">
                         {!! Form::label('title', 'Title:') !!}
-                        {!! Form::text('title', $product->title,['class'=>'form-control rounded']) !!}
+                        {!! Form::text('title', $product->title,['class'=>'form-control rounded' , "required"]) !!}
                     </div>
                     <div class="form-group ml-md-5">
                         {!! Form::label('price', 'Price $USD :') !!}
-                        {!! Form::number('price', $product->price,['class'=>'form-control rounded']) !!}
+                        {!! Form::number('price', $product->price,['class'=>'form-control rounded', "required"]) !!}
                     </div>
                 </div>
                 <div class="form-group">
                     {!! Form::label('description', 'Description:') !!}
-                    {!! Form::textarea('description', $product->description,['class'=>'form-control rounded']) !!}
+                    {!! Form::textarea('description', $product->description,['class'=>'form-control rounded', "required"]) !!}
                 </div>
                 <div class="d-xl-flex">
                     <div class="form-group">
                         {!! Form::label('category_id', 'Category:') !!}
-                        {!! Form::select('category_id', ['Choose Category'=> $categories], $product->category->id, ['class'=>'form-control']) !!}
+                        {!! Form::select('category_id', ['Choose Category'=> $categories], $product->category->id, ['class'=>'form-control', "required"]) !!}
                     </div>
                     <div class="form-group ml-xl-5">
                         {!! Form::label('schooltype_id', 'Schooltype:') !!}
-                        {!! Form::select('schooltype_id', ['Choose Schooltype'=> $schooltypes], $product->schooltype->id, ['class'=>'form-control']) !!}
+                        {!! Form::select('schooltype_id', ['Choose Schooltype'=> $schooltypes], $product->schooltype->id, ['class'=>'form-control', "required"]) !!}
                     </div>
                 </div>
                 <div class="form-group">
