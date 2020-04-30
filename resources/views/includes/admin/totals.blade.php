@@ -10,7 +10,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Products</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">40,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@php echo \App\Product::count(); @endphp</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-store fa-2x text-gray-300"></i>
@@ -25,7 +25,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Orders</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@php echo \App\Order::count(); @endphp</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-list fa-2x text-gray-300"></i>
@@ -40,7 +40,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Users</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@php echo \App\User::count(); @endphp</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -55,7 +55,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total revenue</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">$@php use Illuminate\Support\Facades\DB; $revenue = DB::table('orders')->sum('totalprice'); echo $revenue; @endphp</div>
                         </div>
                         <div class="col-auto">
                             <i class="fab fa-ethereum fa-2x text-gray-300"></i>
