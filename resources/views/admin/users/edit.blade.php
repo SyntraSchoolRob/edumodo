@@ -19,21 +19,21 @@
                 <div class="d-md-flex">
                     <div class="form-group">
                         {!! Form::label('first_name', 'First name:') !!}
-                        {!! Form::text('first_name', $user->first_name,['class'=>'form-control rounded-pill']) !!}
+                        {!! Form::text('first_name', $user->first_name,['class'=>'form-control rounded-pill', "required"]) !!}
                     </div>
                     <div class="form-group ml-md-5">
                         {!! Form::label('last_name', 'Last name:') !!}
-                        {!! Form::text('last_name', $user->last_name,['class'=>'form-control rounded-pill']) !!}
+                        {!! Form::text('last_name', $user->last_name,['class'=>'form-control rounded-pill', "required"]) !!}
                     </div>
                 </div>
                 <div class="form-group">
                     {!! Form::label('email', 'E-mail:') !!}
-                    {!! Form::text('email', $user->email,['class'=>'form-control rounded-pill']) !!}
+                    {!! Form::text('email', $user->email,['class'=>'form-control rounded-pill', "required"]) !!}
                 </div>
                 @if($user->id != 1 and $user->id != 2)
                 <div class="form-group">
                     {!! Form::label('roles[]', 'Role:') !!}
-                    {!! Form::select('roles[]',$roles, $user->roles->pluck('id')->toArray(),['class'=>'form-control', 'multiple'=>'multiple']) !!}
+                    {!! Form::select('roles[]',$roles, $user->roles->pluck('id')->toArray(),['class'=>'form-control', 'multiple'=>'multiple', "required"]) !!}
                 </div>
                 @endif
                 <div class="form-group">
