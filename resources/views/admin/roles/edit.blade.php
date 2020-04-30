@@ -6,22 +6,17 @@
         </div>
         <div class="col-12">
             @include('includes.form_error')
-            {!! Form::model($role,['method'=>'PATCH', 'action'=>['AdminRolesController@update',
-            $role->id],
-            'files'=>true]) !!}
+            {!! Form::model($role,['method'=>'PATCH', 'action'=>['AdminRolesController@update',$role->id],'files'=>true]) !!}
             <div class="form-group">
                 {!! Form::label('name', 'Name:') !!}
-                {!! Form::text('name', null, ['class'=>'form-control']) !!}
+                {!! Form::text('name', null, ['class'=>'form-control', "required"]) !!}
             </div>
             <div class="form-group">
-                {!! Form::submit('Update Role', ['class'=>'btn btn-warning rounded-pill'])
-                 !!}
+                {!! Form::submit('Update Role', ['class'=>'btn btn-warning rounded-pill']) !!}
             </div>
             {!! Form::close() !!}
             @if($role->id != 1 and $role->id !=3)
-            {!! Form::open(['method'=>'DELETE', 'action'=>['AdminRolesController@destroy',
-            $role->id] ])
-             !!}
+            {!! Form::open(['method'=>'DELETE', 'action'=>['AdminRolesController@destroy',$role->id]]) !!}
             <div class="form-group">
                 {!! Form::submit('Delete role', ['class' => 'btn btn-danger rounded-pill']) !!}
             </div>

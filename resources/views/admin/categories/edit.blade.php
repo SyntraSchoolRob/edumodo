@@ -9,7 +9,7 @@
             {!! Form::model($category,['method'=>'PATCH', 'action'=>['AdminCategoriesController@update',$category->id],'files'=>true]) !!}
             <div class="form-group">
                 {!! Form::label('name', 'Name:') !!}
-                {!! Form::text('name', null, ['class'=>'form-control']) !!}
+                {!! Form::text('name', null, ['class'=>'form-control', "required"]) !!}
             </div>
             <div class="form-group">
                 {!! Form::submit('Update Category', ['class'=>'btn btn-warning rounded-pill']) !!}

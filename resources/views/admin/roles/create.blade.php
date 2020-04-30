@@ -8,11 +8,10 @@
         {!! Form::open(['method'=>'POST', 'action'=>'AdminRolesController@store', 'files'=>false]) !!}
         <div class="form-group">
             {!! Form::label('name', 'Name:') !!}
-            {!! Form::text('name', null, ['class'=>'form-control']) !!}
+            {!! Form::text('name', null, ['class'=>'form-control', "required"]) !!}
         </div>
         <div class="form-group">
-            {!! Form::submit('Create Role', ['class'=>'btn btn-success rounded-0'])
-             !!}
+            {!! Form::submit('Create Role', ['class'=>'btn btn-success rounded-pill'])!!}
         </div>
         {!! Form::close() !!}
     </div>
