@@ -36,10 +36,6 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    {!! Form::label('slug', 'Slug:') !!}
-                    {!! Form::text('slug',$product->slug,['class'=>'form-control rounded']) !!}
-                </div>
-                <div class="form-group">
                     {!! Form::label('photo_id', 'Photo:') !!}
                     {!! Form::file('photo_id',null,['class'=>'form-control rounded']) !!}
                 </div>
