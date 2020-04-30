@@ -20,13 +20,9 @@ class AdminUsersController extends Controller
      */
     public function index()
     {
-        //
-
         $users = User::with(['photo','roles'])
             ->withTrashed()
             ->paginate(25);
-
-
         return view('admin.users.index', compact('users'));
     }
 
@@ -37,7 +33,6 @@ class AdminUsersController extends Controller
      */
     public function create()
     {
-        //
         $roles = Role::pluck('name', 'id')->all();
         return view('admin.users.create', compact('roles'));
     }
@@ -50,6 +45,12 @@ class AdminUsersController extends Controller
      */
     public function store(UsersRequest $request)
     {
+        $request->validate([
+            'first_name' => ['required', 'string', 'max:255'],
+            'last_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8'],
+        ]);
         $user = new User();
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
@@ -87,7 +88,6 @@ class AdminUsersController extends Controller
      */
     public function edit(User $user)
     {
-        //
         $roles = Role::pluck('name','id')->all();
         return view ('admin.users.edit', compact('user', 'roles'));
     }
@@ -101,8 +101,6 @@ class AdminUsersController extends Controller
      */
     public function update(UsersEditRequest $request, $id)
     {
-        //
-
         $user = User::findOrFail($id);
         if(trim($request->password)==''){
             $input = $request->except('password');
@@ -118,9 +116,7 @@ class AdminUsersController extends Controller
         }
         $user->update($input);
         $user->roles()->sync($request->roles, true);
-
         return redirect('admin/users');
-
     }
 
     /**
@@ -131,7 +127,6 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-        //
         $user = User::findOrFail($id);
         //dd($user->photo);
         if($user->photo !== null){
@@ -147,10 +142,6 @@ class AdminUsersController extends Controller
     public function userRestore($id){
         User::onlyTrashed()->where('id',$id)->restore();
         Session::flash('softdeleted_user', 'The user has been restored');
-
-        // updating is_active status back to 1
-
-
         return redirect('admin/users');
     }
 }

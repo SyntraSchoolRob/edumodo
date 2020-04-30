@@ -4,7 +4,7 @@
     @endsection
 @section('content')
     <div class="col-12">
-        <h1>Create a new user</h1>
+        <h1>Register a new user</h1>
     </div>
     <div class="col-8">
         @include('includes.form_error')
@@ -24,7 +24,7 @@
             {!! Form::text('email', null,['class'=>'form-control rounded-pill', "required"]) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('Select roles: (hou de ctrl toets ingedrukt om meerdere roles te selecteren') !!}
+            {!! Form::label('Select roles: hold the ctrl key to select multiple roles') !!}
             {!! Form::select('roles[]', $roles, null,['class'=>'form-control', "required", 'multiple'=>'multiple']) !!}
         </div>
         <div class="form-group">
@@ -32,7 +32,7 @@
             {!! Form::select('is_active', array(1=>'Active') , 1 , ['class'=>'form-control', "required"]) !!}
         </div>
         <div class="form-group">
-            {!! Form::label('password', 'Password:') !!}
+            {!! Form::label('password', 'Password: *must be at least 8 characters long') !!}
             {!! Form::password('password',['class'=>'form-control rounded-pill', "required"]) !!}
         </div>
         <div class="form-group">
