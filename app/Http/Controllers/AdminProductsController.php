@@ -7,6 +7,7 @@ use App\Photo;
 use App\Product;
 use App\Schooltype;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class AdminProductsController extends Controller
@@ -18,8 +19,7 @@ class AdminProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::with(['schooltype','photo', 'category'])
-            ->paginate(50);
+        $products = Product::with(['schooltype','photo', 'category'])->paginate(50);
         return view('admin.products.index', compact('products'));
     }
 
@@ -30,9 +30,9 @@ class AdminProductsController extends Controller
      */
     public function create()
     {
-        //
-
-        return view('admin.products.create');
+        $categories = Category::pluck('name', 'id')->all();
+        $schooltypes = Schooltype::pluck('type', 'id')->all();
+        return view('admin.products.create', compact('categories', 'schooltypes'));
     }
 
     /**
@@ -43,7 +43,19 @@ class AdminProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        $user = Auth::user();
+        if($file = $request->file('photo_id')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $photo = Photo::create(['file'=>$name]);
+            $input['photo_id'] = $photo->id;
+        }
+        $input['slug'] = Str::slug($request->title,'-');
+
+        Product::create($input);
+
+        return redirect('/admin/products');
     }
 
     /**
@@ -54,7 +66,6 @@ class AdminProductsController extends Controller
      */
     public function show($id)
     {
-        //
         $product = Product::findOrFail($id);
         return view('product', compact('product'));
     }
