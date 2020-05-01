@@ -2,8 +2,11 @@
 #this file contains a log of all worked sessions
 ##sessions are logged manually with a stopwatch
 ------
-Thursday 30Apr
+Friday 1 May
 -- total time =
+
+Thursday 30Apr
+-- total time = 9 hours
 
 Wednesday 29Apr
 --total time = 6 hours

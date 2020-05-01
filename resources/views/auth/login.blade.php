@@ -18,8 +18,8 @@
                 <form class="pt-2 pb-4 pr-md-5 px-4" method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group pr-md-5 mt-2 pb-2">
-                        <label for="singinEmail" class="pl-2"><i class="fas fa-envelope pr-2"></i>Email-address</label>
-                        <input type="email" class="form-control rounded-pill @error('email') is-invalid @enderror" id="singinEmail" placeholder="you@example.com" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                        <label for="signinEmail" class="pl-2"><i class="fas fa-envelope pr-2"></i>Email-address</label>
+                        <input type="email" class="form-control rounded-pill @error('email') is-invalid @enderror" id="signinEmail" placeholder="you@example.com" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -28,8 +28,8 @@
                     </div>
                     <div class="form-group pr-md-5">
                         <label for="signinPass" class="pl-2"><i class="fas fa-lock pr-2"></i>Password</label>
-                        <input type="password" class="form-control rounded-pill d-block @error('signinPass') is-invalid @enderror" id="signinPass" placeholder="Password" name="password" required autocomplete="current-password">
-                        @error('signinPass')
+                        <input type="password" class="form-control rounded-pill d-block @error('password') is-invalid @enderror" id="signinPass" placeholder="Password" name="password" required autocomplete="current-password">
+                        @error('password')
                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -44,7 +44,6 @@
                     </div>
                 </form>
             </div>
-
             <div class="col-12 col-md-6 p-2">
                 <p class="bg-light rounded-pill pl-4 p-3 text-uppercase font-weight-bold"><i class="fas fa-users pr-2"></i>Join the family</p>
                 <div class="pt-2 px-4 pb-4">
@@ -73,16 +72,11 @@
                         </div>
                         <div class="form-group pr-md-5 mt-2 pb-2">
                             <label for="email" class="pl-2"><i class="fas fa-envelope pr-2"></i>Email-address</label>
-                            <input type="email" class="form-control rounded-pill{{ $errors->has('email') ? ' is-invalid' : '' }}" id="email" name="email" placeholder="you@example.com" value="{{ old('email') }}" required>
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                            @endif
+                            <input type="email" class="form-control rounded-pill" id="email" name="email" placeholder="you@example.com" value="{{ old('email') }}" required>
                         </div>
                         <div class="form-group pr-md-5">
                             <label for="password" class="pl-2"><i class="fas fa-lock pr-2"></i>Password</label>
-                            <input type="password" class="form-control rounded-pill d-block{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password" placeholder="Must be at least 9 characters" name="password" required>
+                            <input type="password" class="form-control rounded-pill d-block{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password" placeholder="Must be at least 8 characters" name="password" required>
                             @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -107,7 +101,7 @@
     </section>
     <a href="{{route('contact')}}"><img src="{{asset('images/website/contactSup.png')}}" alt="support" class="d-none d-md-block d-md-flex justify-content-md-end mr-2 support"></a>
     @include('includes.footer')
-    <script src="js/front_end-app.js"></script>
+    <script src="{{asset('js/front_end-app.js')}}"></script>
     </body>
     </html>
 @endsection
