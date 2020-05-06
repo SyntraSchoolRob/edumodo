@@ -43,6 +43,21 @@ class UsersTableSeeder extends Seeder
 
         ]);
 
+        //me
+        DB::table('users')->insert([
+            'is_active'=>1,
+            'first_name'=>'Robbe    ',
+            'last_name'=>'VL',
+            'email'=>'hi@robbe.us',
+            'email_verified_at'=>now(),
+            'photo_id'=>2,
+            'password'=>bcrypt(12345678),
+            'remember_token' => Str::random(10),
+            'created_at'=>now(),
+            'updated_at'=>now(),
+
+        ]);
+
         // --factory for development purposes only
         factory('App\User',2)->create();
     }

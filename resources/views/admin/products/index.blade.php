@@ -52,11 +52,14 @@
                         <td>{{$product->created_at}}</td>
                         <td>{{$product->updated_at}}</td>
                         <td>
+                            @if($product->deleted_at != null)
+                                <p>hi</p>
+                            @endif
                             @if($product->deleted_at == null)
                                 <a class="btn btn-outline-warning rounded-pill w-100 mb-1" href="{{route('products.edit',$product->id)}}">Edit</a>
                             @endif
                             @if($product->deleted_at != null)
-                                <a class="btn btn-outline-danger rounded-pill mb-1 w-100" href="{{route('admin.productrestore',$product->id)}}">Not Active</a>
+                                <a class="btn btn-outline-danger rounded-pill mb-1 w-100" href="">Not Active</a>
                             @else
                                 {!! Form::open(['method'=>'DELETE', 'action'=>['AdminProductsController@destroy', $product->id]]) !!}
                                 <div class="form-group">

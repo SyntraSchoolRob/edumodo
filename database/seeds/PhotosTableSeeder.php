@@ -17,5 +17,9 @@ class PhotosTableSeeder extends Seeder
 
             'file'=>'headerLogo.png',
         ]);
+        DB::table('photos')->insert([
+
+            'file'=>'me.png',
+        ]);
     }
 }

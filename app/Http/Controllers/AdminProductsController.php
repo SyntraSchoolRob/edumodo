@@ -6,6 +6,7 @@ use App\Category;
 use App\Photo;
 use App\Product;
 use App\Schooltype;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -115,8 +116,16 @@ class AdminProductsController extends Controller
     public function destroy($id)
     {
         //
-        unlink(public_path(). $product->photo->file);
+        $product = Product::findOrFail($id);
+        //if($product->photo !== null){
+            //unlink(public_path() . $product->photo->file);
+            //$product->photo->delete();
+        //}
         $product->delete();
+        //$product->category()->detach();
+        //$product->schooltype()->detach();
+
+        Session::flash('deleted_product', 'The product is deleted');
         return redirect('admin/products');
     }
 
@@ -124,5 +133,11 @@ class AdminProductsController extends Controller
         $categories = Category::all();
         $products = Product::with(['category','schooltype','photo'])->where('category_id', '=', $id)->get();
         return view('admin.products.index', compact('products', 'categories'));
+    }
+
+    public function productRestore($id){
+        Product::onlyTrashed()->where('id',$id)->restore();
+        Session::flash('softdeleted_product', 'The product has been restored');
+        return redirect('admin/products');
     }
 }
