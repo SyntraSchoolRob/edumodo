@@ -87,6 +87,7 @@ class AdminSchoolTypesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Schooltype::findOrFail($id)->delete();
+        return redirect('/admin/schooltypes');
     }
 }
