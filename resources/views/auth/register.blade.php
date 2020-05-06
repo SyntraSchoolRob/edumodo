@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -10,7 +9,6 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
                         <input type="text" class="form-control mb-2 mt-3{{ $errors->has('first_name') ? ' is-invalid' : '' }}" id="first_name" name="first_name" placeholder="Voornaam" value="{{ old('first_name') }}" required>
                         @if ($errors->has('first_name'))
                             <span class="invalid-feedback" role="alert">
@@ -29,7 +27,6 @@
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                         @endif
-
                         <h3 class="text-uppercase text-secondary border-bottom border-secondary text-right mt-5 pb-3">Paswoord</h3>
                         <input type="password" class="form-control mb-2 mt-3{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password" placeholder="Paswoord" name="password" required>
                         @if ($errors->has('password'))

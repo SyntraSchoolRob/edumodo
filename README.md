@@ -19,6 +19,8 @@ Step 8. php artisan migrate
 
 Step 9. php artisan db:seed
 
+Step 10. npm run dev (laravelmix)
+
 Users
 --
 admin: 

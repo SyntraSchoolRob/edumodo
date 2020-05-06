@@ -9,13 +9,13 @@
     <div class="col-12 mb-4">
         <a class="btn btn-success rounded-pill mb-2" href="{{route('products.create')}}">New Product</a>
     </div>
-    <table id="" class="display" style="width:100%">
-        <thead>
+    <table id="" class="display table table-bordered table-hover table-sm shadow rounded" style="width:100%">
+        <thead class="bg-warning text-white">
         <tr>
             <th scope="row">Id</th>
             <th scope="row">Photo</th>
-            <th scope="row">Title</th>
-            <th scope="row">Category</th>
+            <th scope="row"><i class="fab fa-product-hunt"></i> Title</th>
+            <th scope="row"><i class="fas fa-tags"></i> Category</th>
             <th scope="row">Schooltype</th>
             <th scope="row">Price</th>
             <th scope="row">Created</th>

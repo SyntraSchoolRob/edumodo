@@ -22,8 +22,8 @@
                         <input type="email" class="form-control rounded-pill @error('email') is-invalid @enderror" id="signinEmail" placeholder="you@example.com" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                         @error('email')
                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-group pr-md-5">
@@ -31,8 +31,8 @@
                         <input type="password" class="form-control rounded-pill d-block @error('password') is-invalid @enderror" id="signinPass" placeholder="Password" name="password" required autocomplete="current-password">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-check">
@@ -72,15 +72,20 @@
                         </div>
                         <div class="form-group pr-md-5 mt-2 pb-2">
                             <label for="email" class="pl-2"><i class="fas fa-envelope pr-2"></i>Email-address</label>
-                            <input type="email" class="form-control rounded-pill" id="email" name="email" placeholder="you@example.com" value="{{ old('email') }}" required>
+                            <input type="email" class="form-control rounded-pill {{ $errors->has('email') ? ' invalid-feedback' : '' }}" id="email" name="email" placeholder="you@example.com" value="{{ old('email') }}" required>
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
                         </div>
                         <div class="form-group pr-md-5">
                             <label for="password" class="pl-2"><i class="fas fa-lock pr-2"></i>Password</label>
                             <input type="password" class="form-control rounded-pill d-block{{ $errors->has('password') ? ' is-invalid' : '' }}" id="password" placeholder="Must be at least 8 characters" name="password" required>
                             @if ($errors->has('password'))
                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
                             @endif
                         </div>
 {{--                        <input id="password-confirm" type="password" class="form-control mb-3" name="password_confirmation" placeholder="Confirm password" required>--}}
