@@ -19,8 +19,9 @@ class AdminProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::with(['schooltype','photo', 'category'])->paginate(50);
-        return view('admin.products.index', compact('products'));
+        $categories = Category::all();
+        $products = Product::with(['schooltype','photo', 'category'])->get();
+        return view('admin.products.index', compact('products', 'categories'));
     }
 
     /**
@@ -117,5 +118,11 @@ class AdminProductsController extends Controller
         unlink(public_path(). $product->photo->file);
         $product->delete();
         return redirect('admin/products');
+    }
+
+    public function productsPerCategory($id){
+        $categories = Category::all();
+        $products = Product::with(['category','schooltype','photo'])->where('category_id', '=', $id)->get();
+        return view('admin.products.index', compact('products', 'categories'));
     }
 }

@@ -70,9 +70,9 @@ class ProductsTableSeeder extends Seeder
             'updated_at'=>now(),
         ]);
         DB::table('products')->insert([
-            'category_id'=>3,
+            'category_id'=>4,
             'schooltype_id'=>1,
-            'photo_id'=>2,
+            'photo_id'=>1,
             'title'=>'Design suite',
             'price'=>199.99,
             'description'=>'The smartschool suite is suitable for any type of school.
@@ -100,7 +100,7 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'category_id'=>5,
             'schooltype_id'=>3,
-            'photo_id'=>2,
+            'photo_id'=>1,
             'title'=>'Physics suite',
             'price'=>449.99,
             'description'=>'The smartschool suite is suitable for any type of school.
