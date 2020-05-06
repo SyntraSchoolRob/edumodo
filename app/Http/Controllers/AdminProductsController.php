@@ -21,7 +21,7 @@ class AdminProductsController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $products = Product::with(['schooltype','photo', 'category'])->get();
+        $products = Product::with(['schooltype','photo', 'category'])->withTrashed()->paginate(50);
         return view('admin.products.index', compact('products', 'categories'));
     }
 
@@ -135,7 +135,7 @@ class AdminProductsController extends Controller
         return view('admin.products.index', compact('products', 'categories'));
     }
 
-    public function productRestore($id){
+    public function productrestore($id){
         Product::onlyTrashed()->where('id',$id)->restore();
         Session::flash('softdeleted_product', 'The product has been restored');
         return redirect('admin/products');

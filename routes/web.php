@@ -26,6 +26,7 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('/admin/posts', 'AdminPostsController');
     Route::resource('/admin/products', 'AdminProductsController');
     Route::get('admin/products/category/{id}','AdminProductsController@productsPerCategory')->name('admin.productsPerCategory');
+    Route::get('/admin/products/restore/{category}', 'AdminProductsController@productRestore')->name('admin.productrestore');
     Route::resource('/admin/categories', 'AdminCategoriesController');
     Route::resource('/admin/media', 'AdminMediasController');
     Route::resource('/admin/comments', 'PostCommentController');

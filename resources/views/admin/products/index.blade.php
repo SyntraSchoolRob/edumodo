@@ -11,15 +11,14 @@
         <a class="btn btn-success rounded-pill" href="{{route('products.create')}}"><i class="fa fa-plus-circle"></i> New Product</a>
     </div>
     <div class="col-12">
-        <div class="col-12">
-            <div class="d-flex">
-                <a href="{{route('products.index')}}"
-                   class="badge badge-warning m-1 p-3">All</a>
-                @foreach($categories as $category)
-                    <a href="{{route('admin.productsPerCategory', $category->id )}}"
-                       class="badge badge-warning m-1 p-3">{{$category->name}}</a>
-                @endforeach
-            </div>
+        <div class="d-flex">
+            <a href="{{route('products.index')}}"
+               class="badge badge-warning m-1 p-3">All</a>
+            @foreach($categories as $category)
+                <a href="{{route('admin.productsPerCategory', $category->id )}}"
+                   class="badge badge-warning m-1 p-3">{{$category->name}}</a>
+            @endforeach
+        </div>
     </div>
     <div class="col-12 mt-3">
         <table id="" class="display table table-bordered table-hover table-sm shadow rounded" style="width:100%">
@@ -53,13 +52,12 @@
                         <td>{{$product->updated_at}}</td>
                         <td>
                             @if($product->deleted_at != null)
-                                <p>hi</p>
                             @endif
                             @if($product->deleted_at == null)
                                 <a class="btn btn-outline-warning rounded-pill w-100 mb-1" href="{{route('products.edit',$product->id)}}">Edit</a>
                             @endif
-                            @if($product->deleted_at != null)
-                                <a class="btn btn-outline-danger rounded-pill mb-1 w-100" href="">Not Active</a>
+                            @if($product->deleted_at !== null)
+                                <a class="btn btn-outline-danger rounded-pill mb-1 w-100" href="{{route('admin.productrestore',$product->id)}}">Not Active</a>
                             @else
                                 {!! Form::open(['method'=>'DELETE', 'action'=>['AdminProductsController@destroy', $product->id]]) !!}
                                 <div class="form-group">
