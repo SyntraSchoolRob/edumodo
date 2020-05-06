@@ -26,6 +26,7 @@ class AdminSchoolTypesController extends Controller
     public function create()
     {
         //
+        return view('admin.schooltypes.create');
     }
 
     /**
@@ -37,6 +38,8 @@ class AdminSchoolTypesController extends Controller
     public function store(Request $request)
     {
         //
+        Schooltype::create($request->all());
+        return redirect('/admin/schooltypes');
     }
 
     /**
