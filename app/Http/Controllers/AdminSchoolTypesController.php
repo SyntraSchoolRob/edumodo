@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Schooltype;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminSchoolTypesController extends Controller
 {
@@ -14,7 +15,7 @@ class AdminSchoolTypesController extends Controller
      */
     public function index()
     {
-        $schooltypes = Schooltype::paginate(50);
+        $schooltypes = Schooltype::withTrashed()->paginate();
         return view('admin.schooltypes.index', compact('schooltypes'));
     }
 
@@ -89,5 +90,11 @@ class AdminSchoolTypesController extends Controller
     {
         Schooltype::findOrFail($id)->delete();
         return redirect('/admin/schooltypes');
+    }
+
+    public function schooltyperestore($id){
+        Schooltype::onlyTrashed()->where('id',$id)->restore();
+        Session::flash('softdeleted_schooltype', 'The schooltype has been restored');
+        return redirect('admin/schooltypes');
     }
 }

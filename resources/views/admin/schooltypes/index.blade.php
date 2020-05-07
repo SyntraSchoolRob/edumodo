@@ -14,7 +14,7 @@
         <tr>
             <th scope="row">Id</th>
             <th scope="row">Schooltype</th>
-
+            <th scope="row">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -24,6 +24,20 @@
                     <td>{{$schooltype->id}}</td>
                     <td>
                         <a href="{{route('schooltypes.edit', $schooltype->id)}}"> {{$schooltype->type}}</a>
+                    </td>
+                    <td>
+                        @if($schooltype->deleted_at == null)
+                            <a class="btn btn-outline-warning rounded-pill w-100 mb-1" style="max-width: 125px" href="{{route('schooltypes.edit',$schooltype->id)}}">Edit</a>
+                        @endif
+                        @if($schooltype->deleted_at != null)
+                            <a class="btn btn-outline-danger rounded-pill mb-1 w-100" style="max-width: 125px" href="{{route('admin.schooltyperestore',$schooltype->id)}}">Not Active</a>
+                        @else
+                            {!! Form::open(['method'=>'DELETE', 'action'=>['AdminSchoolTypesController@destroy', $schooltype->id]]) !!}
+                            <div class="form-group">
+                                {!! Form::submit('Active',['class'=>'btn btn-outline-success rounded-pill w-100 mb-1', 'style' => "max-width: 125px"]) !!}
+                            </div>
+                            {!! Form::close() !!}
+                        @endif
                     </td>
                 </tr>
             @endforeach

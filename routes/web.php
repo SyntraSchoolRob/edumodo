@@ -36,6 +36,7 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('/admin/orders', 'AdminOrdersController');
     Route::resource('/admin/products', 'AdminProductsController');
     Route::resource('/admin/schooltypes', 'AdminSchoolTypesController');
+    Route::get('/admin/schooltypes/restore/{schooltype}', 'AdminSchoolTypesController@schooltypeRestore')->name('admin.schooltyperestore');
     Route::resource('/admin/contact', 'AdminContactsController');
 });
 

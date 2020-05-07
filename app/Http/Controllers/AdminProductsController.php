@@ -21,7 +21,7 @@ class AdminProductsController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $products = Product::withTrashed()->with(['schooltype','photo', 'category'])->paginate(50);
+        $products = Product::withTrashed()->with(['schooltype','photo', 'category'])->paginate();
         return view('admin.products.index', compact('products', 'categories'));
     }
 
