@@ -38,6 +38,8 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('/admin/schooltypes', 'AdminSchoolTypesController');
     Route::get('/admin/schooltypes/restore/{schooltype}', 'AdminSchoolTypesController@schooltypeRestore')->name('admin.schooltyperestore');
     Route::resource('/admin/contact', 'AdminContactsController');
+    Route::resource('/admin/addresses', 'AdminAddressesController');
+    Route::get('/admin/addresses/restore/{address}', 'AdminAdressesController@addressRestore')->name('admin.addressrestore');
 });
 
 //front_end

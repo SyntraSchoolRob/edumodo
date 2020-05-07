@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Address;
+use App\Country;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminAddressesController extends Controller
 {
@@ -14,6 +17,9 @@ class AdminAddressesController extends Controller
     public function index()
     {
         //
+        $countries = Country::all();
+        $addresses = Address::withTrashed()->with(['user'])->paginate();
+        return view('admin.addresses.index', compact('addresses'));
     }
 
     /**
@@ -80,5 +86,11 @@ class AdminAddressesController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addressrestore($id){
+        Address::onlyTrashed()->where('id',$id)->restore();
+        Session::flash('softdeleted_address', 'The address has been restored');
+        return redirect('admin/addresses');
     }
 }

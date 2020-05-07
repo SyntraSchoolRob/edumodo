@@ -16,7 +16,7 @@
         Contact
     </div>
     <li class="nav-item">
-        <a class="nav-link" href="{{route('comments.index')}}">
+        <a class="nav-link" href="{{route('contact.index')}}">
             <i class="fas fa-envelope"></i>
             <span>Messages</span>
         </a>
@@ -50,7 +50,7 @@
         </a>
     </li>
     <div class="sidebar-heading">
-        Content
+        Users
     </div>
     <li class="nav-item">
         <a class="nav-link" href="{{route('users.index')}}">
@@ -59,11 +59,20 @@
         </a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="{{route('addresses.index')}}">
+            <i class="fas fa-home"></i>
+            <span>Addresses</span>
+        </a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="{{route('roles.index')}}">
             <i class="fas fa-users-cog"></i>
             <span>Roles</span>
         </a>
     </li>
+    <div class="sidebar-heading">
+        Content
+    </div>
     <li class="nav-item">
         <a class="nav-link" href="{{route('media.index')}}">
             <i class="fas fa-camera-retro"></i>

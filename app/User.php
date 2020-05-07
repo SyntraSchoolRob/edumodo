@@ -56,19 +56,16 @@ class User extends Authenticatable
         return $this->hasMany('App\Order');
     }
     public function address(){
-        return $this->belongsTo('App\Address');
+        return $this->belongsTo(User::class);
     }
 
-
-    /**bijkomende functies**/
+    /**added functions**/
     public function isAdmin(){
         foreach($this->roles as $role){
             if($role->name == 'administrator' && $this->deleted_at == null){
                 return true;
             }
         }
-
-
     }
 
 }

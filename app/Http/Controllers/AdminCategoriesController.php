@@ -16,7 +16,7 @@ class AdminCategoriesController extends Controller
     public function index()
     {
         //
-        $categories = Category::withTrashed()->paginate(4);
+        $categories = Category::withTrashed()->paginate(5);
         return view('admin.categories.index', compact('categories'));
     }
 

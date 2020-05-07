@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Message;
 
 class AdminContactsController extends Controller
 {
@@ -11,14 +13,12 @@ class AdminContactsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function view()
-    {
 
-    }
     public function index()
     {
         //
-        return view('contact');
+        $contacts = Contact::paginate();
+        return view('admin.messages.index', compact('contacts'));
     }
 
     /**
