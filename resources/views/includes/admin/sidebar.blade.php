@@ -44,7 +44,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="{{route('comments.index')}}">
+        <a class="nav-link" href="{{route('orders.index')}}">
             <i class="fas fa-shipping-fast"></i>
             <span>Orders</span>
         </a>

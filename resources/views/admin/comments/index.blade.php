@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('title')
+    All comments
+@endsection
 @section('content')
         <div class="col-12">
             <h1>Comments</h1>

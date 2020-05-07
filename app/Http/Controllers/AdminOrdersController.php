@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use Illuminate\Http\Request;
 
 class AdminOrdersController extends Controller
@@ -13,7 +14,8 @@ class AdminOrdersController extends Controller
      */
     public function index()
     {
-        //
+        $orders = Order::paginate();
+        return view('admin.orders.index', compact('orders'));
     }
 
     /**

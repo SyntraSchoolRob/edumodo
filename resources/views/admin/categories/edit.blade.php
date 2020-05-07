@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-12">
-            <h1>Edit Category</h1>
+            <h1><i class="fas fa-stream pr-2"></i>Edit Category</h1>
         </div>
         <div class="col-12">
             @include('includes.form_error')

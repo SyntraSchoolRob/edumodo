@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="col-12">
-        <h1>Create Roles</h1>
+        <h1><i class="fas fa-users-cog pr-2"></i>Create new Role</h1>
     </div>
     <div class="col-12">
         @include('includes.form_error')

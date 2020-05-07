@@ -4,7 +4,7 @@
 @endsection
 @section('content')
    <div class="col-12">
-       <h1>All Media</h1>
+       <h1><i class="fas fa-camera-retro pr-2"></i>All Media</h1>
    </div>
     <div class="col-12">
         <a class="btn btn-success rounded-pill mb-2" href="{{route('media.create')}}">Upload new photo</a>

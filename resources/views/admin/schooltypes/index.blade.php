@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="col-12">
-        <h1>All Schooltypes</h1>
+        <h1><i class="fas fa-graduation-cap pr-2"></i>All Schooltypes</h1>
     </div>
     <div class="col-12">
         <a class="btn btn-success rounded-pill mb-2" href="{{route('schooltypes.create')}}">New Schooltype</a>

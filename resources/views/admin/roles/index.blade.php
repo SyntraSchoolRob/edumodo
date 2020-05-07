@@ -15,7 +15,7 @@
         @endif
     </div>
     <div class="col-12">
-        <h1>Roles</h1>
+        <h1><i class="fas fa-users-cog pr-2"></i>Roles</h1>
     </div>
     <div class="col-12">
         <a class="btn btn-success rounded-pill mb-2" href="{{route('roles.create')}}">New Role</a>

@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-12">
-            <h1>Edit Roles</h1>
+            <h1><i class="fas fa-users-cog pr-2"></i>Edit Role</h1>
         </div>
         <div class="col-12">
             @include('includes.form_error')

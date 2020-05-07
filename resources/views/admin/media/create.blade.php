@@ -5,7 +5,7 @@
 @section('content')
     <div class="row">
         <div class="col-12">
-            <h1>Upload Media</h1>
+            <h1><i class="fas fa-camera-retro pr-2"></i>Upload Media</h1>
         </div>
         <div class="col-12">
             {!! Form::open(['method'=>'POST', 'action'=>'AdminMediasController@store', 'class'=>'dropzone rounded']) !!}

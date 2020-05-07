@@ -9,7 +9,7 @@
         @endif
     </div>
     <div class="col-12">
-        <h1>All users</h1>
+        <h1><i class="fas fa-user pr-2"></i>All users</h1>
     </div>
     <div class="col-12">
         <a class="btn btn-success rounded-pill mb-2" href="{{route('users.create')}}">New User</a>

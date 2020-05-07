@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="col-12 d-md-flex">
-        <h1>Shop - All Products</h1>
+        <h1><i class="fas fa-store pr-2"></i>Shop - All Products</h1>
 
     </div>
     <div class="col-12 mb-4 d-flex justify-content-end" style="margin-top: -50px">

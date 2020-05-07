@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="col-12">
-        <h1>Create Schooltype</h1>
+        <h1><i class="fas fa-graduation-cap pr-2"></i>Create Schooltype</h1>
     </div>
     <div class="col-12 col-md-6">
         @include('includes.form_error')

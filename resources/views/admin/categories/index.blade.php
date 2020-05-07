@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="col-12">
-        <h1>All Categories</h1>
+        <h1><i class="fas fa-stream pr-2"></i>All Categories</h1>
     </div>
     <div class="col-12">
         <a class="btn btn-success rounded-pill mb-2" href="{{route('categories.create')}}">New Category</a>
