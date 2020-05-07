@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-group ml-md-5">
                         {!! Form::label('price', 'Price $USD :') !!}
-                        {!! Form::number('price', $product->price,['class'=>'form-control rounded', "required"]) !!}
+                        {!! Form::number('price', $product->price,['class'=>'form-control rounded', "required", 'step' => '0.01']) !!}
                     </div>
                 </div>
                 <div class="form-group">
@@ -27,12 +27,23 @@
                 </div>
                 <div class="d-xl-flex">
                     <div class="form-group">
+                        <!-- if product has a category select selected category. else: if a product has a deleted category require the admin to select a category -->
+                        @if($product->category)
                         {!! Form::label('category_id', 'Category:') !!}
                         {!! Form::select('category_id', ['Choose Category'=> $categories], $product->category->id, ['class'=>'form-control', "required"]) !!}
+                        @else
+                            {!! Form::label('category_id', 'Category:') !!}
+                            {!! Form::select('category_id', [''=>'Choose Category'] + $categories, null, ['class'=>'form-control', "required"]) !!}
+                        @endif
                     </div>
                     <div class="form-group ml-xl-5">
+                        @if($product->schooltype)
                         {!! Form::label('schooltype_id', 'Schooltype:') !!}
                         {!! Form::select('schooltype_id', ['Choose Schooltype'=> $schooltypes], $product->schooltype->id, ['class'=>'form-control', "required"]) !!}
+                        @else
+                            {!! Form::label('schooltype_id', 'Schooltype:') !!}
+                            {!! Form::select('schooltype_id', [''=>'Choose Schooltype'] + $schooltypes, null, ['class'=>'form-control', "required"]) !!}
+                        @endif
                     </div>
                 </div>
                 <div class="form-group">

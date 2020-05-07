@@ -13,12 +13,12 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('categories')->insert(['name'=>'Engineering']);
-        DB::table('categories')->insert(['name'=>'Accounting']);
-        DB::table('categories')->insert(['name'=>'Technology']);
-        DB::table('categories')->insert(['name'=>'Design']);
-        DB::table('categories')->insert(['name'=>'Physics']);
-        DB::table('categories')->insert(['name'=>'Chemistry']);
+        DB::table('categories')->insert(['name'=>'Engineering','created_at'=>now(),'updated_at'=>now() ]);
+        DB::table('categories')->insert(['name'=>'Accounting','created_at'=>now(),'updated_at'=>now() ]);
+        DB::table('categories')->insert(['name'=>'Technology','created_at'=>now(),'updated_at'=>now() ]);
+        DB::table('categories')->insert(['name'=>'Design','created_at'=>now(),'updated_at'=>now() ]);
+        DB::table('categories')->insert(['name'=>'Physics','created_at'=>now(),'updated_at'=>now() ]);
+        DB::table('categories')->insert(['name'=>'Chemistry','created_at'=>now(),'updated_at'=>now() ]);
     }
 
 }

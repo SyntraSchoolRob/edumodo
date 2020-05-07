@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminCategoriesController extends Controller
 {
@@ -15,7 +16,7 @@ class AdminCategoriesController extends Controller
     public function index()
     {
         //
-        $categories = Category::paginate(50);
+        $categories = Category::withTrashed()->paginate(50);
         return view('admin.categories.index', compact('categories'));
     }
 
@@ -96,5 +97,11 @@ class AdminCategoriesController extends Controller
         //
         Category::findOrFail($id)->delete();
         return redirect('/admin/categories');
+    }
+
+    public function categoryrestore($id){
+        Category::onlyTrashed()->where('id',$id)->restore();
+        Session::flash('softdeleted_category', 'The category has been restored');
+        return redirect('admin/categories');
     }
 }

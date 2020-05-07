@@ -21,7 +21,7 @@ class AdminProductsController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $products = Product::with(['schooltype','photo', 'category'])->withTrashed()->paginate(50);
+        $products = Product::withTrashed()->with(['schooltype','photo', 'category'])->paginate(50);
         return view('admin.products.index', compact('products', 'categories'));
     }
 
@@ -76,14 +76,12 @@ class AdminProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
-        $product = Product::findOrFail($id);
-        $products = Product::with(['schooltype','photo', 'category']);
-        $categories = Category::pluck('name', 'id')->all();
+        $categories = Category::pluck('name', 'id', 'deleted_at')->all();
         $schooltypes = Schooltype::pluck('type', 'id')->all();
-        return view('admin.products.edit', compact('product', 'products', 'categories', 'schooltypes'));
+
+        return view('admin.products.edit', compact('product', 'categories', 'schooltypes'));
     }
 
     /**

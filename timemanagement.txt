@@ -3,8 +3,11 @@
 ##sessions are logged manually with a stopwatch
 ------
 
+Thursday 7May
+--total time =
+
 Wednesday 6May
--- total time =
+-- total time = 9 hours
 
 Friday 1 May
 -- total time = 4 hours
