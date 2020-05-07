@@ -19,7 +19,7 @@ class CreateAddressesTable extends Migration
             $table->string('street');
             $table->string('city');
             $table->string('state');
-            $table->string('zip');
+            $table->unsignedBigInteger('zip');
             $table->unsignedBigInteger('country_id')->index()->unsigned();
             $table->timestamps();
 

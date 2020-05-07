@@ -10,7 +10,7 @@
                 </div>
                 <div class="card-body">
                     <p>Welcome to your dashboard. Find and manage all your data, create & design what you love, update your shop, ship you're orders & analyse you're sales revenue.  </p>
-                    <a rel="nofollow" href="{{route('posts.index')}}">View your products &rarr;</a>
+                    <a rel="nofollow" href="{{route('products.index')}}">View your products &rarr;</a>
                 </div>
             </div>
             <div class="card shadow mb-4">
