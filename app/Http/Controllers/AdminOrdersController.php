@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminOrdersController extends Controller
 {
@@ -58,7 +59,8 @@ class AdminOrdersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order = Order::findOrFail($id);
+        return view('admin.orders.edit', compact('order'));
     }
 
     /**
@@ -70,7 +72,9 @@ class AdminOrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $order = Order::findOrFail($id);
+        $order->update($request->all());
+        return redirect('/admin/orders');
     }
 
     /**
@@ -81,6 +85,14 @@ class AdminOrdersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Order::findOrFail($id)->delete();
+        return redirect('/admin/orders');
     }
+    public function orderrestore($id){
+        Order::onlyTrashed()->where('id',$id)->restore();
+        Session::flash('softdeleted_order', 'The order has been restored');
+        return redirect('admin/orders');
+    }
+
+
 }

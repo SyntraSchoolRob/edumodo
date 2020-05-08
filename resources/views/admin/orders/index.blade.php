@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="col-12">
-        <h1> <i class="fas fa-shipping-fast pr-2"></i>Orders</h1>
+        <h1><i class="fas fa-shipping-fast pr-2"></i>Orders</h1>
     </div>
     <div class="col-12">
         <table class="table table-striped">
@@ -14,9 +14,10 @@
                 <th scope="row">User_id</th>
                 <th scope="row">Product_id</th>
                 <th scope="row">Items</th>
-                <th scope="row">Price</th>
+                <th scope="row">Total Price</th>
                 <th scope="row">Created_at</th>
                 <th scope="row">Updated_at</th>
+                <th scope="row">Order Details</th>
             </tr>
             </thead>
             <tbody>
@@ -27,11 +28,10 @@
                         <td>{{$order->user_id}}</td>
                         <td>{{$order->product_id}}</td>
                         <td>{{$order->items}}</td>
-                        <td>{{$order->price}}</td>
+                        <td>{{$order->totalprice}}</td>
                         <td>{{$order->created_at}}</td>
                         <td>{{$order->updated_at}}</td>
-
-
+                        <td><a href="{{route('orders.edit',$order->id)}}">Details</a></td>
                     </tr>
                 @endforeach
             @endif

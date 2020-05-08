@@ -1,4 +1,7 @@
 @extends('layouts.admin')
+@section('title')
+    Edit Schooltype
+@endsection
 @section('content')
     <div class="row">
         <div class="col-12">

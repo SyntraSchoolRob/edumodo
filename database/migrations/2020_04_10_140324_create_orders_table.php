@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->integer('items');
             $table->decimal('totalprice', 8, 2);
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 

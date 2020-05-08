@@ -13,7 +13,7 @@
         <thead>
         <tr>
             <th scope="row">Id</th>
-            <th scope="row">User</th>
+            <th scope="row">User_id</th>
             <th scope="row">Street</th>
             <th scope="row">City</th>
             <th scope="row">State</th>
@@ -32,7 +32,7 @@
                     <td>{{$address->city}}</td>
                     <td>{{$address->state}}</td>
                     <td>{{$address->zip}}</td>
-                    <td>{{$address->country}}</td>
+                    <td class="text-danger">United States</td>
                     <td>
                         @if($address->deleted_at == null)
                             <a class="btn btn-outline-warning rounded-pill w-100 mb-1" style="max-width: 125px" href="{{route('addresses.edit',$address->id)}}">Edit</a>
