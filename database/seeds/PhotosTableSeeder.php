@@ -16,10 +16,20 @@ class PhotosTableSeeder extends Seeder
         DB::table('photos')->insert([
 
             'file'=>'headerLogo.png',
+            'created_at'=>now(),
+            'updated_at'=>now(),
         ]);
         DB::table('photos')->insert([
 
             'file'=>'me.png',
+            'created_at'=>now(),
+            'updated_at'=>now(),
         ]);
+/*        DB::table('photos')->insert([
+
+            'file'=>'userImage.png',
+            'created_at'=>now(),
+            'updated_at'=>now(),
+        ]);*/
     }
 }

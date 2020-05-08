@@ -11,7 +11,7 @@ Step4. Create database with InnoDb engine: dbedumodo
 
 Step5. Open your editor and change .env file  (db_database=dbedumodo, db_username, db_password)
 
-// later integration Step6. Stripe: stripe_key=your public key, stripe_secret=your private key
+//step 6 paypal
 
 Step7. php artisan key:generate
 
@@ -19,7 +19,7 @@ Step 8. php artisan migrate
 
 Step 9. php artisan db:seed
 
-Step 10. npm run dev (laravelmix)
+Step 10. check node_modules: num install +  npm run dev (laravelmix)
 
 Users
 --

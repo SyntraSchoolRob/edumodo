@@ -46,7 +46,7 @@ class AdminProductsController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $user = Auth::user();
+        Auth::user();
         if($file = $request->file('photo_id')){
             $name = time() . $file->getClientOriginalName();
             $file->move('images', $name);

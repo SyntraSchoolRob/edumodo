@@ -16,7 +16,7 @@ class ContactsTableSeeder extends Seeder
             'first_name'=> 'Taylor ',
             'last_name'=> 'Otwell ',
             'email'=> 'taylor@laravel.com ',
-            'subject'=> 'Laravel nominations winner congrats ',
+            'subject'=> 'Edumodo - Laravel nominations winner congrats ',
             'description'=> 'Lorem ipsum text here',
             'created_at'=>now(),
             'updated_at'=>now(),
