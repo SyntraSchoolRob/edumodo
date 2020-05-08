@@ -30,6 +30,7 @@ Route::group(['middleware' => 'admin'], function(){
     Route::resource('/admin/categories', 'AdminCategoriesController');
     Route::get('/admin/categories/restore/{category}', 'AdminCategoriesController@categoryRestore')->name('admin.categoryrestore');
     Route::resource('/admin/media', 'AdminMediasController');
+    Route::get('/admin/media/restore/{media}', 'AdminMediasController@mediaRestore')->name('admin.mediarestore');
     Route::resource('/admin/comments', 'PostCommentController');
     Route::resource('/admin/roles', 'AdminRolesController');
     Route::get('/admin/roles/restore/{role}', 'AdminRolesController@roleRestore')->name('admin.rolerestore');

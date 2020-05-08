@@ -17,6 +17,7 @@ class CreatePhotosTable extends Migration
             $table->bigIncrements('id');
             $table->string('file');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

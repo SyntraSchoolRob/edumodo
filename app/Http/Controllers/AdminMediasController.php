@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Photo;
+use Illuminate\Support\Facades\Session;
 
 use Illuminate\Http\Request;
 
@@ -103,6 +104,11 @@ class AdminMediasController extends Controller
         $photo->delete();
         return redirect('admin/media');
 
+    }
 
+    public function mediarestore($id){
+        Photo::onlyTrashed()->where('id',$id)->restore();
+        Session::flash('softdeleted_file', 'The file has been restored');
+        return redirect('admin/media');
     }
 }

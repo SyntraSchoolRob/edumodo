@@ -31,10 +31,10 @@
                            {{$photo->created_at}}
                        </td>
                        <td>
-                           {!! Form::open(['method'=>'DELETE', 'action'=>['AdminMediasController@destroy', $photo->id] ]) !!}
-                           <div class="form-group">
-                               {!! Form::submit('Soft-Delete file', ['class' => 'btn btn-danger rounded-pill']) !!}
-                           </div>
+                            {!! Form::open(['method'=>'DELETE', 'action'=>['AdminMediasController@destroy', $photo->id]]) !!}
+                               <div class="form-group">
+                                   {!! Form::submit('Soft-Delete file',['class'=>'btn btn-outline-success rounded-pill w-100 mb-1', 'style' => "max-width: 125px"]) !!}
+                               </div>
                            {!! Form::close() !!}
                        </td>
                    </tr>
