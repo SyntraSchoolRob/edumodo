@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\Photo;
 use App\Product;
 use App\User;
@@ -23,11 +24,18 @@ class MenuController extends Controller
     }
     public function contact()
     {
+
         return view('contact');
+    }
+    public function contactform(Request $request)
+    {
+        Contact::create($request->all());
+        return redirect('contact');
     }
     public function cart()
     {
         return view('cart');
     }
+
 
 }

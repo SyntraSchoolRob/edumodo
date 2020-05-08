@@ -14,7 +14,7 @@
                 </div>
                 <div class="form-group ml-xl-5">
                     {!! Form::label('price', 'Price $USD :') !!}
-                    {!! Form::number('price', null, ['class'=>'form-control rounded', "required", 'step' => '0.01']) !!}
+                    {!! Form::number('price', null, ['class'=>'form-control rounded', "required", 'step' => '0.01', 'min'=>'1' ]) !!}
                 </div>
             </div>
             <div class="d-xl-flex">

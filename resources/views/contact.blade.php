@@ -32,31 +32,33 @@
             <div class="col-12 col-md-6">
                 <div class="row row p-2  p-md-4 bg-white rounded shadow maxWidth1150 mx-auto">
                     <div class="col-12 p-md-2 pr-md-5">
-                        <form method="post">
+                        <form method="post" action="{{action('MenuController@contactform')}}" enctype="multipart/form-data">
+                            @csrf
+                            @method('POST')
                             <h1 class="montserratB pt-4 pt-lg-0">Contact us</h1>
                             <div class="d-sm-flex">
                                 <div class="form-group">
-                                    <label for="contactFN" class="pl-2">First name</label>
-                                    <input type="text" class="form-control rounded-pill" id="contactFN" placeholder="Johnny">
+                                    <label for="first_name" class="pl-2">First name</label>
+                                    <input type="text" class="form-control rounded-pill" id="first_name" placeholder="Johnny" required>
                                 </div>
                                 <div class="form-group pl-sm-3">
-                                    <label for="contactLN" class="pl-2">Last name</label>
-                                    <input type="text" class="form-control rounded-pill d-block" id="contactLN" placeholder="Depp">
+                                    <label for="last_name" class="pl-2">Last name</label>
+                                    <input type="text" class="form-control rounded-pill d-block" id="last_name" placeholder="Depp" required >
                                 </div>
                             </div>
                             <div class="form-group mt-2 pb-2">
-                                <label for="contactEmail" class="pl-2">Email-address</label>
-                                <input type="email" class="form-control rounded-pill" id="contactEmail" placeholder="you@example.com">
+                                <label for="email" class="pl-2">Email-address</label>
+                                <input type="email" class="form-control rounded-pill" id="email" placeholder="you@example.com" required>
                             </div>
                             <div class="form-group">
-                                <label for="contactSubj" class="pl-2">Subject</label>
-                                <input type="text" class="form-control rounded-pill" id="contactSubj" placeholder="Save us ;)">
+                                <label for="subject" class="pl-2">Subject</label>
+                                <input type="text" class="form-control rounded-pill" id="subject" placeholder="Save us ;)" required>
                             </div>
                             <div class="form-group">
-                                <label for="contactTextArea" class="font-italic mb-2">Leave your message here</label>
-                                <textarea name="t" cols="30" rows="2" class="form-control" id="contactTextArea"></textarea>
+                                <label for="description" class="font-italic mb-2">Leave your message here</label>
+                                <input type="text" class="form-control" id="description" required>
                             </div>
-                            <button class="btn btn-dark rounded-pill py-2 btn-block mb-5 mb-lg-0">Send <i class="fas fa-arrow-right pl-2"></i></button>
+                            <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block mb-5 mb-lg-0">Send <i class="fas fa-arrow-right pl-2"></i></button>
                         </form>
                     </div>
                 </div>

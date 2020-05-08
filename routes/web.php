@@ -46,6 +46,11 @@ Route::group(['middleware' => 'admin'], function(){
 Route::get('shop', 'MenuController@shop')->name('shop');
 Route::get('product/{id}', 'MenuController@product')->name('product');
 Route::get('contact', 'MenuController@contact')->name('contact');
+Route::post('contactform', 'MenuController@contactform')->name('contactform');
 Route::get('checkout', 'CheckoutController@index')->name('checkout');
 Route::get('cart', 'MenuController@cart')->name('cart');
+
+
+
+
 

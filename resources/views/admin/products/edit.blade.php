@@ -18,7 +18,7 @@
                     </div>
                     <div class="form-group ml-md-5">
                         {!! Form::label('price', 'Price $USD :') !!}
-                        {!! Form::number('price', $product->price,['class'=>'form-control rounded', "required", 'step' => '0.01']) !!}
+                        {!! Form::number('price', $product->price,['class'=>'form-control rounded', "required", 'step' => '0.01', 'step' => '0.01', 'min'=>'1' ]) !!}
                     </div>
                 </div>
                 <div class="form-group">

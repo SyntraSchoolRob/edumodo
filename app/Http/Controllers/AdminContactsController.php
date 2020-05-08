@@ -40,6 +40,7 @@ class AdminContactsController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -49,7 +50,7 @@ class AdminContactsController extends Controller
     public function show()
     {
         //
-        return view('contact');
+
     }
 
     /**
