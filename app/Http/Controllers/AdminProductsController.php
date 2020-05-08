@@ -129,7 +129,7 @@ class AdminProductsController extends Controller
 
     public function productsPerCategory($id){
         $categories = Category::all();
-        $products = Product::with(['category','schooltype','photo'])->where('category_id', '=', $id)->get();
+        $products = Product::withTrashed()->with(['category','schooltype','photo'])->where('category_id', '=', $id)->get();
         return view('admin.products.index', compact('products', 'categories'));
     }
 

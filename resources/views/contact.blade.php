@@ -32,34 +32,37 @@
             <div class="col-12 col-md-6">
                 <div class="row row p-2  p-md-4 bg-white rounded shadow maxWidth1150 mx-auto">
                     <div class="col-12 p-md-2 pr-md-5">
-                        <form method="post" action="{{action('MenuController@contactform')}}" enctype="multipart/form-data">
-                            @csrf
-                            @method('POST')
-                            <h1 class="montserratB pt-4 pt-lg-0">Contact us</h1>
-                            <div class="d-sm-flex">
-                                <div class="form-group">
-                                    <label for="first_name" class="pl-2">First name</label>
-                                    <input type="text" class="form-control rounded-pill" id="first_name" placeholder="Johnny" required>
-                                </div>
-                                <div class="form-group pl-sm-3">
-                                    <label for="last_name" class="pl-2">Last name</label>
-                                    <input type="text" class="form-control rounded-pill d-block" id="last_name" placeholder="Depp" required >
-                                </div>
-                            </div>
-                            <div class="form-group mt-2 pb-2">
-                                <label for="email" class="pl-2">Email-address</label>
-                                <input type="email" class="form-control rounded-pill" id="email" placeholder="you@example.com" required>
-                            </div>
+                        {{--<div class="alert alert-success rounded-pill" role="alert">
+                            Your message has been submitted
+                        </div>--}}
+                        {!! Form::open(['method'=>'POST', 'action'=>'MenuController@contactform', 'files'=>false]) !!}
+                        <h1 class="montserratB pt-4 pt-lg-0">Contact us</h1>
+                        <div class="d-sm-flex">
                             <div class="form-group">
-                                <label for="subject" class="pl-2">Subject</label>
-                                <input type="text" class="form-control rounded-pill" id="subject" placeholder="Save us ;)" required>
+                                {!! Form::label('first_name', 'First name:') !!}
+                                {!! Form::text('first_name', null, ['class'=>'form-control rounded-pill', "required", 'placeholder'=>'Johnny']) !!}
                             </div>
-                            <div class="form-group">
-                                <label for="description" class="font-italic mb-2">Leave your message here</label>
-                                <input type="text" class="form-control" id="description" required>
+                            <div class="form-group pl-sm-3">
+                                {!! Form::label('last_name', 'Last name:') !!}
+                                {!! Form::text('last_name', null, ['class'=>'form-control rounded-pill d-block', "required", 'placeholder'=>'Depp']) !!}
                             </div>
-                            <button type="submit" class="btn btn-dark rounded-pill py-2 btn-block mb-5 mb-lg-0">Send <i class="fas fa-arrow-right pl-2"></i></button>
-                        </form>
+                        </div>
+                        <div class="form-group mt-2 pb-2">
+                            {!! Form::label('email', 'Email-address') !!}
+                            {!! Form::email('email', null, ['class'=>'form-control rounded-pill', "required", 'placeholder'=>'you@example.com']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('subject', 'Subject') !!}
+                            {!! Form::text('subject', null, ['class'=>'form-control rounded-pill', "required", 'placeholder'=>'Your subject']) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::label('description', 'Leave your message here') !!}
+                            {!! Form::textarea('description', null, ['class'=>'form-control', "required", 'placeholder'=>'Your message', 'cols'=>"30", 'rows'=>"4"]) !!}
+                        </div>
+                        <div class="form-group">
+                            {!! Form::submit('Send message', ['class'=>'btn btn-dark rounded-pill py-2 btn-block mb-5 mb-lg-0']) !!}
+                        </div>
+                        {!! Form::close() !!}
                     </div>
                 </div>
             </div>

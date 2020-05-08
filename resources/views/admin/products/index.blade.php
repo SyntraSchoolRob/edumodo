@@ -43,7 +43,7 @@
                         <td>
                             <img height="75" width="68" src="{{$product->photo ? asset($product->photo->file) : asset('images/website/shopImg.png') }}" alt="product image" class="rounded">
                         </td>
-                        <td><a href="{{route('products.edit',$product->id)}}">{{$product->title}}</a></td>
+                        <td>@if($product->deleted_at == null)<a href="{{route('products.edit',$product->id)}}">{{$product->title}}</a> @else {{$product->title}} @endif</td>
                         <!--first testing relation (category)  ? then show the category-->
                         <td>{{$product->category ? $product->category->name : 'not categorized'}}</td>
                         <td>{{$product->schooltype ? $product->schooltype->type : 'no type'}}</td>

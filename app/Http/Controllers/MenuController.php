@@ -24,7 +24,6 @@ class MenuController extends Controller
     }
     public function contact()
     {
-
         return view('contact');
     }
     public function contactform(Request $request)
