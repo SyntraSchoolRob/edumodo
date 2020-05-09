@@ -25,7 +25,7 @@
                 <a itemprop="url" class="btn btnShop d-none d-lg-block" href="{{route('shop')}}">Shop</a>
             </li>
             <li class="nav-item">
-                <a itemprop="url" class="nav-link menuStyle" href="{{route('cart')}}">Cart <i class="fas fa-shopping-basket"><span class="badge ">2</span></i></a>
+                <a itemprop="url" class="nav-link menuStyle" href="{{route('cart')}}">Cart <i class="fas fa-shopping-basket"><span class="badge ">{{Session::has('cart') ? Session::get('cart')->totalQuantity: '0'}}</span></i></a>
             </li>
         </ul>
     </div>
