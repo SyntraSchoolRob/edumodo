@@ -8,7 +8,7 @@
     @else
     <div class="col-12 col-md-4 boxjeR mt-4">
 @endif
-    <a href="{{route('product', ['id'=>4])}}" class="hnone"><div class="card">
+    <a href="{{route('product', ['id'=>($product->id)])}}" class="hnone"><div class="card">
             <img src="{{$product->photo ? asset($product->photo->file) : asset('images/website/shopImg.png') }}" alt="product" class="img-fluid card-img-top">
             <p class="montserratL text-center m-0 card-title c5a9">{{$product->title}}</p>
             <p class="fs18 font-weight-bold text-center card-text pb-3 c5a9">${{$product->price}}</p>

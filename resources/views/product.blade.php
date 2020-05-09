@@ -13,7 +13,7 @@
     <section class="container-fluid maxWidth1150 mx-auto" itemscope itemtype="https://schema.org/Product">
         <div class="row pb-5 ">
             <div class="col-12 col-md-6 ">
-                <img src="{{asset('images/website/detail3.jpg')}}" class="d-block w-100 rounded mt-4" alt="product" itemprop="img">
+                <img src="{{$product->photo ? asset($product->photo->file) : asset('images/website/shopImg.png') }}" class="d-block w-100 rounded mt-4" alt="product" itemprop="img">
             </div>
             <div class="col col-md-6 p-5 ">
                 <p class="pt-md-5 font-s-24 c9fb">${{$product->price}} USD /Billed Anually</p>
@@ -25,7 +25,8 @@
                     <span class="fa fa-star text-warning"></span>
                     <span class="fa fa-star"></span>
                 </div>
-                <p itemprop="category">Category: School & education</p>
+                <p itemprop="category" class="mb-0">Category: {{$product->category ? $product->category->name : 'not categorized'}}</p>
+                <p class="mt-0">Schooltype: {{$product->schooltype ? $product->schooltype->type : 'no type'}}</p>
                 <p>{{$product->description}}</p>
                 <form>
                     <div class="form-group width125 pb-2">

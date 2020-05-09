@@ -42,7 +42,9 @@ class MenuController extends Controller
     public function product($id)
     {
         $product = Product::findOrFail($id);
-        return view('product', compact('product'));
+        $categories = Category::pluck('name')->all();
+        $schooltypes = Schooltype::pluck('type')->all();
+        return view('product', compact('product', 'categories', 'schooltypes'));
     }
 
 
