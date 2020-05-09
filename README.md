@@ -19,7 +19,7 @@ Step 8. php artisan migrate
 
 Step 9. php artisan db:seed
 
-Step 10. check node_modules: num install +  npm run dev (laravelmix)
+Step 10. 10.1->check if node_modules ?  npm run dev (laravelmix) : num install 
 
 Users
 --

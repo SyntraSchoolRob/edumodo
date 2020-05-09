@@ -10,7 +10,7 @@
         <a class="btn btn-success rounded-pill mb-2" href="{{route('media.create')}}">Upload new photo</a>
     </div>
    <div class="col-12">
-       <table class="table table-striped">
+       <table class="table">
            <thead>
            <tr>
                <th scope="row">Id</th>
@@ -25,7 +25,7 @@
                    <tr>
                        <td>{{$photo->id}}</td>
                        <td>
-                           <img height="62" src="{{$photo->file ? asset($photo->file) :'http:/placehold.it/62x62'}}" alt="">
+                           <img height="100" src="{{$photo->file ? asset($photo->file) :'http:/placehold.it/62x62'}}" alt="">
                        </td>
                        <td>
                            {{$photo->created_at}}
