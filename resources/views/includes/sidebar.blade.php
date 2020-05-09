@@ -17,7 +17,7 @@
 
         <div>
             @foreach($schooltypes as $schooltype)
-                <a href="" class="c5a9 hcBeige hline"><p class="m-0">{{$schooltype->type}}</p></a>
+                <a href="{{route('productsPerSchoolType', $schooltype->id)}}" class="c5a9 hcBeige hline"><p class="m-0">{{$schooltype->type}}</p></a>
             @endforeach
         </div>
 

@@ -34,7 +34,7 @@ class MenuController extends Controller
     public function productsPerSchoolType($id){
         $schooltypes = Schooltype::all();
         $categories = Category::all();
-        $products = Product::with(['schooltype','photo', 'categories'])->where('schooltype_id', '=', $id)->get();
+        $products = Product::with(['schooltype','photo', 'category'])->where('schooltype_id', '=', $id)->get();
         return view('shop', compact('products', 'schooltypes', 'categories'));
     }
 

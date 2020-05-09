@@ -81,7 +81,7 @@ class ProductsTableSeeder extends Seeder
         ]);
         DB::table('products')->insert([
             'category_id'=>5,
-            'schooltype_id'=>3,
+            'schooltype_id'=>2,
             'photo_id'=>3,
             'title'=>'Physics suite',
             'price'=>449.99,
@@ -92,7 +92,7 @@ class ProductsTableSeeder extends Seeder
         ]);
         DB::table('products')->insert([
             'category_id'=>2,
-            'schooltype_id'=>3,
+            'schooltype_id'=>2,
             'photo_id'=>3,
             'title'=>'Accountancy suite',
             'price'=>99.99,
