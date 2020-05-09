@@ -26,14 +26,16 @@ class MenuController extends Controller
     //filter
     public function productsPerCategory($id){
         $categories = Category::all();
-        $products = Product::with(['category','photo'])->where('category_id', '=', $id)->get();
-        return view('shop', compact('products', 'categories'));
+        $schooltypes = Schooltype::all();
+        $products = Product::with(['category','photo', 'schooltype'])->where('category_id', '=', $id)->get();
+        return view('shop', compact('products', 'categories', 'schooltypes'));
     }
 
     public function productsPerSchoolType($id){
         $schooltypes = Schooltype::all();
-        $products = Product::with(['schooltype','photo'])->where('schooltype_id', '=', $id)->get();
-        return view('shop', compact('products', 'schooltypes'));
+        $categories = Category::all();
+        $products = Product::with(['schooltype','photo', 'categories'])->where('schooltype_id', '=', $id)->get();
+        return view('shop', compact('products', 'schooltypes', 'categories'));
     }
 
 

@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="col-12 mt-3">
-        <table id="" class="display table table-bordered table-hover table-sm shadow rounded" style="width:100%">
+        <table id="" class="display table table-bordered table-sm shadow rounded" style="width:100%">
             <thead class="bg-warning text-white">
             <tr>
                 <th scope="row">Id</th>

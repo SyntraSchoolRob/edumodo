@@ -16,7 +16,7 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'category_id'=>3,
             'schooltype_id'=>1,
-            'photo_id'=>1,
+            'photo_id'=>3,
             'title'=>'Server license',
             'price'=>649.99,
             'description'=>'The smartschool suite is suitable for any type of school. Whether it is for a primary, secondary, high school or university, this software is made with the highest industry leading standards providing your teachers and students with the best software they can imagine.',
@@ -27,7 +27,7 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'category_id'=>3,
             'schooltype_id'=>3,
-            'photo_id'=>1,
+            'photo_id'=>3,
             'title'=>'1TB Cloud Storage',
             'price'=>19.99,
             'description'=>'The smartschool suite is suitable for any type of school. Whether it is for a primary, secondary, high school or university, this software is made with the highest industry leading standards providing your teachers and students with the best software they can imagine.',
@@ -38,7 +38,7 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'category_id'=>3,
             'schooltype_id'=>3,
-            'photo_id'=>1,
+            'photo_id'=>3,
             'title'=>'Linux office suite',
             'price'=>0.00,
             'description'=>'The smartschool suite is suitable for any type of school. Whether it is for a primary, secondary, high school or university, this software is made with the highest industry leading standards providing your teachers and students with the best software they can imagine.',
@@ -49,7 +49,7 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'category_id'=>3,
             'schooltype_id'=>1,
-            'photo_id'=>1,
+            'photo_id'=>3,
             'title'=>'Smartschool suite',
             'price'=>849.99,
             'description'=>'The smartschool suite is suitable for any type of school. Whether it is for a primary, secondary, high school or university, this software is made with the highest industry leading standards providing your teachers and students with the best software they can imagine.',
@@ -60,7 +60,7 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'category_id'=>4,
             'schooltype_id'=>1,
-            'photo_id'=>1,
+            'photo_id'=>3,
             'title'=>'Design suite',
             'price'=>199.99,
             'description'=>'The smartschool suite is suitable for any type of school. Whether it is for a primary, secondary, high school or university, this software is made with the highest industry leading standards providing your teachers and students with the best software they can imagine.',
@@ -71,7 +71,7 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'category_id'=>1,
             'schooltype_id'=>3,
-            'photo_id'=>1,
+            'photo_id'=>3,
             'title'=>'Engineering suite',
             'price'=>998.99,
             'description'=>'The smartschool suite is suitable for any type of school. Whether it is for a primary, secondary, high school or university, this software is made with the highest industry leading standards providing your teachers and students with the best software they can imagine.',
@@ -82,7 +82,7 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'category_id'=>5,
             'schooltype_id'=>3,
-            'photo_id'=>1,
+            'photo_id'=>3,
             'title'=>'Physics suite',
             'price'=>449.99,
             'description'=>'The smartschool suite is suitable for any type of school. Whether it is for a primary, secondary, high school or university, this software is made with the highest industry leading standards providing your teachers and students with the best software they can imagine.',
@@ -93,7 +93,7 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'category_id'=>2,
             'schooltype_id'=>3,
-            'photo_id'=>1,
+            'photo_id'=>3,
             'title'=>'Accountancy suite',
             'price'=>99.99,
             'description'=>'The smartschool suite is suitable for any type of school. Whether it is for a primary, secondary, high school or university, this software is made with the highest industry leading standards providing your teachers and students with the best software they can imagine.',
@@ -104,7 +104,7 @@ class ProductsTableSeeder extends Seeder
         DB::table('products')->insert([
             'category_id'=>6,
             'schooltype_id'=>3,
-            'photo_id'=>1,
+            'photo_id'=>3,
             'title'=>'Chemistry suite',
             'price'=>1299.99,
             'description'=>'The smartschool suite is suitable for any type of school. Whether it is for a primary, secondary, high school or university, this software is made with the highest industry leading standards providing your teachers and students with the best software they can imagine.',

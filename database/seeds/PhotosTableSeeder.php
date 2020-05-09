@@ -25,6 +25,12 @@ class PhotosTableSeeder extends Seeder
             'created_at'=>now(),
             'updated_at'=>now(),
         ]);
+        DB::table('photos')->insert([
+
+            'file'=>'productsImg.png',
+            'created_at'=>now(),
+            'updated_at'=>now(),
+        ]);
 /*        DB::table('photos')->insert([
 
             'file'=>'userImage.png',
