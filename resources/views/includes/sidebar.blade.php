@@ -20,9 +20,6 @@
                 <a href="{{route('productsPerSchoolType', $schooltype->id)}}" class="c5a9 hcBeige hline"><p class="m-0">{{$schooltype->type}}</p></a>
             @endforeach
         </div>
-
-
-
 {{--        <p class="fs18 pt-4 pb-1 border-bottom">Price range</p>
         <div class="regular-slider mt-5 mb-5"></div>--}}
 

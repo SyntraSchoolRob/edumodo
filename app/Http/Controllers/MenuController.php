@@ -38,16 +38,16 @@ class MenuController extends Controller
         return view('shop', compact('products', 'schooltypes', 'categories'));
     }
 
-
-
-
-
-    //--------------------example product as demo
+    //--------------------index product-page
     public function product($id)
     {
         $product = Product::findOrFail($id);
         return view('product', compact('product'));
     }
+
+
+
+    //--------------------index contact-page
     public function contact()
     {
         return view('contact');
@@ -57,6 +57,7 @@ class MenuController extends Controller
         Contact::create($request->all());
         return redirect('contact');
     }
+    //--------------------shopping-cart functions
     public function cart()
     {
         return view('cart');
