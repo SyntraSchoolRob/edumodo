@@ -54,11 +54,10 @@
 
                         </form>
                         <div class="col-6 col-sm-2 col-md-1 d-flex align-items-center ">
-                            <p class="font-weight-bold ">{{$item['product_price']}}</p>
+                            <p class="font-weight-bold ">${{$item['product_price']*$item['quantity']}}</p>
                         </div>
                 </div>
                 @endforeach
-
                     <div class="row border-bottom pt-2">
                         <div class="col d-flex justify-content-end">
                             <p class="font-italic"><i class="fas fa-shopping-cart"></i>Total of <span>{{Session::has('cart') ? Session::get('cart')->totalQuantity : '0'}}</span> products</p>
@@ -113,10 +112,10 @@
                 <div class="pt-2 px-4 pb-4">
                     <p class="font-italic mb-4">Shipping and additional costs are calculated based on your location and residency</p>
                     <ul class="list-unstyled mb-4">
-                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal</strong><strong>$849.00</strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal</strong><strong>$  @if(Session::has('cart')) {{Session::get('cart')->totalPrice}} @else 0.00 @endif</strong></li>
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipment</strong><strong>$0.00</strong></li>
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
-                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong><strong class="font-s-24">$849.99 </strong></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong><strong class="font-s-24">$ @if(Session::has('cart')) {{Session::get('cart')->totalPrice}} @else 0.00 @endif</strong></li>
                         <li class="pt-4"><a href="{{route('checkout')}}" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout <i class="fas fa-arrow-right pl-2"></i></a></li>
                     </ul>
                 </div>
