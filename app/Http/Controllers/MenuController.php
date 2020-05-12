@@ -70,7 +70,7 @@ class MenuController extends Controller
         $cart->add($product, $id);
         Session::put('cart', $cart);
 
-        return redirect('/cart');
+        return back();
     }
 
     public function cart()
@@ -85,6 +85,25 @@ class MenuController extends Controller
         }
 
         //return view('cart');
+    }
+
+    public function updateQuantity(Request $request){
+        $oldCart = Session::has('cart') ? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->updateQuantity($request->id, $request->quantity);
+        Session::put('cart', $cart);
+
+        return redirect('/cart');
+    }
+
+    public function removeItem($id){
+        $oldCart = Session::has('cart') ? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+        //(Session('cart'));
+        Session::put('cart', $cart);
+
+        return redirect('/cart');
     }
 
 

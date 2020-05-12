@@ -53,7 +53,8 @@ Route::post('contactform', 'MenuController@contactform')->name('contactform');
 Route::get('checkout', 'CheckoutController@index')->name('checkout');
 Route::get('cart', 'MenuController@cart')->name('cart');
 Route::get('/products/addToCart/{id}', 'MenuController@addToCart')->name('addToCart');
-
+Route::post('cart', 'MenuController@updateQuantity')->name('quantity');
+Route::get('/removeItem/{id}', 'MenuController@removeItem')->name('removeItem');
 
 
 

@@ -20,7 +20,7 @@
 
                 <div class="row border-bottom pt-2">
                     <div class="col-5 col-sm-3 col-md-2">
-                        <img src="{{asset('images/website/shopImg.png')}}" alt="product" class="img-fluid">
+                        <img src="{{$item['product_image'] ? asset($item['product_image']) : asset('images/website/shopImg.png') }}" alt="product" class="img-fluid rounded">
                     </div>
                     <div class="col-7 col-sm-3 col-md-6 p-md-3 d-flex align-items-center">
                         <div>
@@ -28,16 +28,31 @@
                             <p class="font-italic d-flex align-content-center">Description - {{Str::limit($item['product_description'], 125, '...') }}</p>
                         </div>
                     </div>
-                    <div class="col-6 col-sm-4 col-md-3 p-lg-4 pt-3 pt-sm-0">
-                        <small class="c5a9">Amount: <span></span></small><br>
-                        <small class="c5a9">Product price: <span>{{$item['product_price']}}</span></small><br>
-                        <i class="fas fa-trash-alt pt-2 pl-2"></i>
-                    </div>
-                    <div class="col-6 col-sm-2 col-md-1 d-flex align-items-center ">
-                        <p class="font-weight-bold ">{{$item['product_price']}}</p>
-                    </div>
-                </div>
 
+                        <form class="col-6 col-sm-4 col-md-3 p-lg-4 pt-3 pt-sm-0" method="POST" action="{{action('MenuController@updateQuantity')}}" enctype="multipart/form-data">
+                            @csrf
+                            @method('POST')
+
+                            @if($item['quantity'] <= 4)
+                            <div class="form-group d-flex mb-0">
+                                <label for="amount"><small>Amount:</small></label>
+                                <select class="form-control ml-2" id="amount" name="amount" style="width: 60px">
+                                    @for ($x = 1; $x <= 5 ; $x++)
+                                        <option value="{{$x}}" @if( $item['quantity'] == $x) selected @endif> {{$x}} </option>
+                                    @endfor
+                                </select>
+                            </div>
+                            @else
+                                <small>Amount: {{$item['quantity']}}</small>
+                            @endif
+                           <br>
+                            <small class="c5a9">Product price: <span>${{$item['product_price']}}</span></small><br>
+                            <a href="{{route('removeItem', $item['product_id'])}}"><i class="fas fa-trash-alt pt-2 pl-2"></i></a>
+                        </form>
+                        <div class="col-6 col-sm-2 col-md-1 d-flex align-items-center ">
+                            <p class="font-weight-bold ">{{$item['product_price']}}</p>
+                        </div>
+                </div>
                 @endforeach
 
                     <div class="row border-bottom pt-2">
@@ -45,10 +60,7 @@
                             <p class="font-italic"><i class="fas fa-shopping-cart"></i>Total of <span>{{Session::has('cart') ? Session::get('cart')->totalQuantity : '0'}}</span> products</p>
                         </div>
                     </div>
-
             @else
-
-
             <div class="row border-bottom pt-2">
                 <div class="col-5 col-sm-3 col-md-2">
                     <img src="{{asset('images/website/shopImg.png')}}" alt="product" class="img-fluid">
@@ -65,11 +77,7 @@
                     <a href="{{route('shop')}}" class="hcBeige c5a9"><p class="font-weight-bold ">Shop >></p></a>
                 </div>
             </div>
-
-
             @endif
-
-
 
 
         </div>
@@ -104,8 +112,8 @@
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal</strong><strong>$849.00</strong></li>
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipment</strong><strong>$0.00</strong></li>
                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
-                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong><strong class="font-s-24">$849.99</strong></li>
-                        <li class="pt-4"><a href="checkout.html" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout <i class="fas fa-arrow-right pl-2"></i></a></li>
+                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong><strong class="font-s-24">$849.99 </strong></li>
+                        <li class="pt-4"><a href="{{route('checkout')}}" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout <i class="fas fa-arrow-right pl-2"></i></a></li>
                     </ul>
                 </div>
             </div>
