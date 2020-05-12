@@ -29,7 +29,8 @@
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-3 p-lg-4 pt-3 pt-sm-0">
-                        <p class="c5a9">Amount: <span></span></p>
+                        <small class="c5a9">Amount: <span></span></small><br>
+                        <small class="c5a9">Product price: <span>{{$item['product_price']}}</span></small><br>
                         <i class="fas fa-trash-alt pt-2 pl-2"></i>
                     </div>
                     <div class="col-6 col-sm-2 col-md-1 d-flex align-items-center ">
