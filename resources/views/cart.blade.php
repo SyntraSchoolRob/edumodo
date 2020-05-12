@@ -29,14 +29,15 @@
                         </div>
                     </div>
 
-                        <form class="col-6 col-sm-4 col-md-3 p-lg-4 pt-3 pt-sm-0" method="POST" action="{{action('MenuController@updateQuantity')}}" enctype="multipart/form-data">
+                        <form class="col-6 col-sm-4 col-md-3 p-lg-4 pt-3 pt-sm-0" method="POST" action="{{action('MenuController@updateQuantity')}}"
+                              enctype="multipart/form-data" name="postForm{{$item['product_id']}}">
                             @csrf
                             @method('POST')
 
                             @if($item['quantity'] <= 4)
                             <div class="form-group d-flex mb-0">
-                                <label for="amount"><small>Amount:</small></label>
-                                <select class="form-control ml-2" id="amount" name="amount" style="width: 60px">
+                                <label for="quantity"><small>Amount:</small></label>
+                                <select class="form-control ml-2" id="quantity" name="quantity" style="width: 60px" >
                                     @for ($x = 1; $x <= 5 ; $x++)
                                         <option value="{{$x}}" @if( $item['quantity'] == $x) selected @endif> {{$x}} </option>
                                     @endfor
@@ -47,7 +48,10 @@
                             @endif
                            <br>
                             <small class="c5a9">Product price: <span>${{$item['product_price']}}</span></small><br>
-                            <a href="{{route('removeItem', $item['product_id'])}}"><i class="fas fa-trash-alt pt-2 pl-2"></i></a>
+                            <a href="{{route('removeItem', $item['product_id'])}}" class="hcBeige c5a9"><i class="fas fa-trash-alt pt-2 pl-2"></i></a>
+                            <input class="form-control form-control-sm" type="hidden" name="id"
+                                   value="{{$item['product_id']}}">
+                            <button class="btn btn-warning" type="submit">Update</button>
                         </form>
                         <div class="col-6 col-sm-2 col-md-1 d-flex align-items-center ">
                             <p class="font-weight-bold ">{{$item['product_price']}}</p>
