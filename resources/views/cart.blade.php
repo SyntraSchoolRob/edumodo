@@ -30,14 +30,14 @@
                     </div>
 
                         <form class="col-6 col-sm-4 col-md-3 p-lg-4 pt-3 pt-sm-0" method="POST" action="{{action('MenuController@updateQuantity')}}"
-                              enctype="multipart/form-data" name="postForm">
+                              enctype="multipart/form-data" name="postForm{{$item['product_id']}}">
                             @csrf
                             @method('POST')
 
                             @if($item['quantity'] <= 4)
                             <div class="form-group d-flex mb-0">
                                 <label for="quantity"><small>Amount:</small></label>
-                                <select class="form-control ml-2" id="quantity" name="quantity" style="width: 60px" onchange="document.postForm.submit()">
+                                <select class="form-control ml-2" id="quantity" name="quantity" style="width: 60px" onchange="document.postForm{{$item['product_id']}}.submit()">
                                     @for ($x = 1; $x <= 5 ; $x++)
                                         <option value="{{$x}}" @if( $item['quantity'] == $x) selected @endif> {{$x}} </option>
                                     @endfor
