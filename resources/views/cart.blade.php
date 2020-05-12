@@ -25,7 +25,7 @@
                     <div class="col-7 col-sm-3 col-md-6 p-md-3 d-flex align-items-center">
                         <div>
                             <p class="d-flex align-items-center">{{$item['product_name']}}</p>
-                            <p class="font-italic d-flex align-content-center">Category - School & software</p>
+                            <p class="font-italic d-flex align-content-center">Description - {{Str::limit($item['product_description'], 125, '...') }}</p>
                         </div>
                     </div>
                     <div class="col-6 col-sm-4 col-md-3 p-lg-4 pt-3 pt-sm-0">
