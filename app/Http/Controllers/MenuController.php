@@ -91,6 +91,7 @@ class MenuController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart'):null;
         $cart = new Cart($oldCart);
         $cart->updateQuantity($request->id, $request->quantity);
+        //@dd($cart);
         Session::put('cart', $cart);
 
         return redirect('/cart');
