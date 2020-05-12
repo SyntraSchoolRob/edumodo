@@ -13,95 +13,64 @@
     <section class=" pb-5">
         <h1 class="cBeige montserratB font-s-24 fs-39 d-flex justify-content-center pt-5 pb-5">Shoppingcart</h1>
         <div class="container-fluid rounded shadow-sm mb-5 maxWidth1150 mx-auto p-md-4 bg-white">
-            <!--        1 rij = volledig product-->
+
+            @if(Session::has('cart'))
+
+                @foreach($cart as $item)
+
+                <div class="row border-bottom pt-2">
+                    <div class="col-5 col-sm-3 col-md-2">
+                        <img src="{{asset('images/website/shopImg.png')}}" alt="product" class="img-fluid">
+                    </div>
+                    <div class="col-7 col-sm-3 col-md-6 p-md-3 d-flex align-items-center">
+                        <div>
+                            <p class="d-flex align-items-center">{{$item['product_name']}}</p>
+                            <p class="font-italic d-flex align-content-center">Category - School & software</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-3 p-lg-4 pt-3 pt-sm-0">
+                        <p class="c5a9">Amount: <span></span></p>
+                        <i class="fas fa-trash-alt pt-2 pl-2"></i>
+                    </div>
+                    <div class="col-6 col-sm-2 col-md-1 d-flex align-items-center ">
+                        <p class="font-weight-bold ">{{$item['product_price']}}</p>
+                    </div>
+                </div>
+
+                @endforeach
+
+                    <div class="row border-bottom pt-2">
+                        <div class="col d-flex justify-content-end">
+                            <p class="font-italic"><i class="fas fa-shopping-cart"></i>Total of <span>{{Session::has('cart') ? Session::get('cart')->totalQuantity : '0'}}</span> products</p>
+                        </div>
+                    </div>
+
+            @else
+
+
             <div class="row border-bottom pt-2">
                 <div class="col-5 col-sm-3 col-md-2">
                     <img src="{{asset('images/website/shopImg.png')}}" alt="product" class="img-fluid">
                 </div>
                 <div class="col-7 col-sm-3 col-md-6 p-md-3 d-flex align-items-center">
                     <div>
-                        <p class="d-flex align-items-center">Smartschool suite</p>
-                        <p class="font-italic d-flex align-content-center">Category - School & software</p>
+                        <p class="d-flex align-items-center">You're cart is empty</p>
+                        <p class="font-italic d-flex align-content-center">Go to shop to discover our products.</p>
                     </div>
                 </div>
                 <div class="col-6 col-sm-4 col-md-3 p-lg-4 pt-3 pt-sm-0">
-                    <form class="d-flex">
-                        <label for="product1" class="pr-2">Amount</label>
-                        <div class="d-flex">
-                            <select class="form-control" id="product1">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                    </form>
-                    <i class="fas fa-trash-alt pt-2 pl-2"></i>
-                </div>
-                <div class="col-6 col-sm-2 col-md-1 d-flex align-items-center ">
-                    <p class="font-weight-bold ">$849,99</p>
-                </div>
-            </div>
-            <!--        einde product rij-->
-            <div class="row border-bottom pt-2">
-                <div class="col-5 col-sm-3 col-md-2">
-                    <img src="{{asset('images/website/shopImg.png')}}" alt="product" class="img-fluid">
-                </div>
-                <div class="col-7 col-sm-3 col-md-6 p-md-3 d-flex align-items-center">
-                    <div>
-                        <p class="d-flex align-items-center">Engineering suite</p>
-                        <p class="font-italic d-flex align-content-center">Category - Engineering</p>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 p-lg-4 pt-3 pt-sm-0">
-                    <form class="d-flex">
-                        <label for="product2" class="pr-2">Amount</label>
-                        <div class="d-flex">
-                            <select class="form-control" id="product2">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                    </form>
-                    <i class="fas fa-trash-alt pt-2 pl-2"></i>
                 </div>
                 <div class="col-6 col-sm-2 col-md-1 d-flex align-items-center">
-                    <p class="font-weight-bold ">$998,99</p>
+                    <a href="{{route('shop')}}" class="hcBeige c5a9"><p class="font-weight-bold ">Shop >></p></a>
                 </div>
             </div>
-            <div class="row border-bottom pt-2">
-                <div class="col-5 col-sm-3 col-md-2">
-                    <img src="{{asset('images/website/shopImg.png')}}" alt="product" class="img-fluid">
-                </div>
-                <div class="col-7 col-sm-3 col-md-6 p-md-3 d-flex align-items-center">
-                    <div>
-                        <p class="d-flex align-items-center">Engineering suite</p>
-                        <p class="font-italic d-flex align-content-center">Category - Engineering</p>
-                    </div>
-                </div>
-                <div class="col-6 col-sm-4 col-md-3 p-lg-4 pt-3 pt-sm-0">
-                    <form class="d-flex">
-                        <label for="product3" class="pr-2">Amount</label>
-                        <div class="d-flex">
-                            <select class="form-control" id="product3">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                            </select>
-                        </div>
-                    </form>
-                    <i class="fas fa-trash-alt pt-2 pl-2"></i>
-                </div>
-                <div class="col-6 col-sm-2 col-md-1 d-flex align-items-center">
-                    <p class="font-weight-bold ">$849,99</p>
-                </div>
-            </div>
+
+
+            @endif
+
+
+
+
         </div>
     </section>
     <div class="container-fluid mb-5 p-0">

@@ -1,10 +1,12 @@
 --timemangement back-end only
 #this file contains a log of all worked sessions
-##sessions are logged manually with a stopwatch
 ------
 
-Saterday 9May
+Thuesday 12May
 -- total time =
+
+Saterday 9May
+-- total time = 10 hours
 
 Friday 8May
 -- total time = 10 hours

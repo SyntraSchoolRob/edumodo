@@ -28,7 +28,6 @@
                 <p itemprop="category" class="mb-0">Category: {{$product->category ? $product->category->name : 'not categorized'}}</p>
                 <p class="mt-0">Schooltype: {{$product->schooltype ? $product->schooltype->type : 'no type'}}</p>
                 <p>{{$product->description}}</p>
-                <form>
                     <div class="form-group width125 pb-2">
                         <label for="productAmount"></label>
                         <select class="form-control" id="productAmount">
@@ -40,8 +39,7 @@
                             <option value="5">5</option>
                         </select>
                     </div>
-                    <button class="btn btn-info text-white rounded-pill pt-2 pl-3 pb-2 pr-3" type="submit" name="addToCart">Add to cart <i class="fas fa-shopping-basket pl-2"></i></button>
-                </form>
+                    <a href="{{route('addToCart', $product->id)}}" class="btn btn-info text-white rounded-pill pt-2 pl-3 pb-2 pr-3">Add to cart <i class="fas fa-shopping-basket pl-2"></i></a>
             </div>
         </div>
         <div class="row">

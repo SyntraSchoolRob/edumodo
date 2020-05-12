@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Category;
 use App\Contact;
 use App\Photo;
@@ -47,9 +48,7 @@ class MenuController extends Controller
         return view('product', compact('product', 'categories', 'schooltypes'));
     }
 
-
-
-    //--------------------index contact-page
+    //--------------------contact-page & form
     public function contact()
     {
         return view('contact');
@@ -59,10 +58,33 @@ class MenuController extends Controller
         Contact::create($request->all());
         return redirect('contact');
     }
+
+
     //--------------------shopping-cart functions
+
+    public function addToCart($id){
+        $product = Product::with(['category', 'schooltype','photo'])->where('id','=', $id)->first();
+
+        $oldCart = Session::has('cart') ? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $id);
+        Session::put('cart', $cart);
+
+        return redirect('/cart');
+    }
+
     public function cart()
     {
-        return view('cart');
+        if(!Session::has('cart')){
+            return view('cart');
+        }else{
+            $currentCart = Session::has('cart') ? Session::get('cart') : null;
+            $cart = new Cart($currentCart);
+            $cart = $cart->products;
+            return view('cart',compact('cart'));
+        }
+
+        //return view('cart');
     }
 
 
