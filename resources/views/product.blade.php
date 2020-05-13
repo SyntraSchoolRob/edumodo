@@ -28,26 +28,7 @@
                 <p itemprop="category" class="mb-0">Category: {{$product->category ? $product->category->name : 'not categorized'}}</p>
                 <p class="mt-0">Schooltype: {{$product->schooltype ? $product->schooltype->type : 'no type'}}</p>
                 <p>{{$product->description}}</p>
-                <form method="POST" action="{{action('MenuController@updateQuantity')}}"
-                      enctype="multipart/form-data" name="postForm{{$item['product_id']}}" >
-                    @csrf
-                    @method('POST')
-
-                    <div class="form-group width125 pb-2">
-                        <label for="productAmount"></label>
-                        <select class="form-control" id="productAmount">
-                            <option selected disabled>Quantity</option>
-
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-
-                        </select>
-                    </div>
-                </form>
-                    <a href="{{route('addToCart', $product->id)}}" class="btn btn-info text-white rounded-pill pt-2 pl-3 pb-2 pr-3">Add to cart <i class="fas fa-shopping-basket pl-2"></i></a>
+                <a href="{{route('addToCart', $product->id)}}" class="btn btn-info text-white rounded-pill pt- pl-3 pb-2 pr-3 mt-3">Add to cart <i class="fas fa-shopping-basket pl-2"></i></a>
             </div>
         </div>
         <div class="row">
