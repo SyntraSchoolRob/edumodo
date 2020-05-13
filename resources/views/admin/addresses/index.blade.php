@@ -32,7 +32,9 @@
                     <td>{{$address->city}}</td>
                     <td>{{$address->state}}</td>
                     <td>{{$address->zip}}</td>
-                    <td class="text-danger">United States</td>
+                    <td class="text-danger">
+        US
+                    </td>
                     <td>
                         @if($address->deleted_at == null)
                             <a class="btn btn-outline-warning rounded-pill w-100 mb-1" style="max-width: 125px" href="{{route('addresses.edit',$address->id)}}">Edit</a>

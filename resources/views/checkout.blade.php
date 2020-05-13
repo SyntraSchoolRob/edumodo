@@ -16,31 +16,41 @@
             <div class="col-12 col-md-6 p-4">
                 <p class="bg-light rounded-pill pl-4 p-2 text-uppercase font-weight-bold"><i class="fas fa-file-alt pr-3"></i>Billing details</p>
                 <p class="font-italic mb-4 pl-sm-4">We'll never share your details with anyone else!</p>
-                <form class="pl-sm-4">
+                <form class="pl-sm-4" method="POST" action="">
+                    @csrf
+                    @method('POST')
+
                     <div class="d-sm-flex">
                         <div class="form-group">
-                            <label for="firstName" class="pl-2">First name</label>
-                            <input type="text" class="form-control rounded-pill" id="firstName">
+                            <label for="first_name" class="pl-2">First name</label>
+                            <input type="text" class="form-control rounded-pill" id="first_name" required name="first_name"
+                                   @if(Auth::user() ) value="{{ Auth::user()->first_name }}" @endif >
                         </div>
                         <div class="form-group pl-sm-3">
                             <label for="lastName" class="pl-2">Last name</label>
-                            <input type="text" class="form-control rounded-pill d-block" id="lastName">
+                            <input type="text" class="form-control rounded-pill d-block" required id="lastName"
+                                   @if(Auth::user() ) value="{{ Auth::user()->last_name }}" @endif >
                         </div>
                     </div>
+
                     <div class="d-sm-flex">
                         <div class="form-group">
-                            <label for="companyName" class="pl-2">Company(optional)</label>
-                            <input type="text" class="form-control rounded-pill" id="companyName">
+                            <label for="company" class="pl-2">Company(optional)</label>
+                            <input type="text" class="form-control rounded-pill" id="company" name="company" placeholder="ex. Harvard University">
                         </div>
                         <div class="form-group pl-sm-3">
-                            <label for="vatNumber" class="pl-2">VAT-number(optional)</label>
-                            <input type="number" class="form-control rounded-pill d-block" id="vatNumber">
+                            <label for="vat" class="pl-2">VAT-number(optional)</label>
+                            <input type="number" class="form-control rounded-pill d-block" id="vat" min="0" max="1010101010101010101010101010" step="1" placeholder="ex 140.450.450.450">
                         </div>
                     </div>
+
                     <div class="form-group mt-2 pr-md-5 pb-2">
                         <label for="emailUser" class="pl-2">Email-address</label>
-                        <input type="email" class="form-control rounded-pill" id="emailUser" placeholder="you@example.com">
+                        <input type="email" class="form-control rounded-pill" id="emailUser" placeholder="you@example.com"
+                               @if(Auth::user() ) value="{{ Auth::user()->email }}" @endif >
                     </div>
+
+
                     <p class="bg-light rounded-pill pl-4 p-2 text-uppercase font-weight-bold"><i class="fas fa-map-marked-alt pr-3"></i>Delivery address</p>
                     <div class="form-group pr-md-5">
                         <label for="inputAddress" class="pl-2">Address</label>
@@ -69,8 +79,9 @@
                         </div>
                         <div class="form-group col-md-7">
                             <label for="country" class="pl-2">Country</label>
-                            <select id="country" class="form-control rounded-pill">
+                            <select id="country" class="form-control rounded-pill" required>
                                 <option selected>Choose...</option>
+
                                 <option>United States</option>
                             </select>
                         </div>
