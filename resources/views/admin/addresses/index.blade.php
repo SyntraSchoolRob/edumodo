@@ -33,7 +33,7 @@
                     <td>{{$address->state}}</td>
                     <td>{{$address->zip}}</td>
                     <td class="text-danger">
-        US
+                        
                     </td>
                     <td>
                         @if($address->deleted_at == null)

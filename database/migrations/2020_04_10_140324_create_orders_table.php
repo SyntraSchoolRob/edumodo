@@ -19,6 +19,7 @@ class CreateOrdersTable extends Migration
             $table->unsignedBigInteger('product_id')->index()->unsigned();
             $table->integer('items');
             $table->decimal('totalprice', 8, 2);
+            $table->string('delivery');
             $table->timestamps();
             $table->softDeletes();
 

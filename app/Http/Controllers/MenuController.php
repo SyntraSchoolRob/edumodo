@@ -59,7 +59,6 @@ class MenuController extends Controller
         return redirect('contact');
     }
 
-
     //--------------------shopping-cart functions
 
     public function addToCart($id){

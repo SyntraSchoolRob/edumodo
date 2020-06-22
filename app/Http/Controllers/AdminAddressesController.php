@@ -7,6 +7,7 @@ use App\Country;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
+
 class AdminAddressesController extends Controller
 {
     /**
@@ -17,9 +18,10 @@ class AdminAddressesController extends Controller
     public function index()
     {
         //
-        $countries = Country::all();
         $addresses = Address::withTrashed()->with(['user'])->paginate();
-        return view('admin.addresses.index', compact('addresses'));
+        $country = Country::all()->where('country_id', '=', 2);
+
+        return view('admin.addresses.index', compact('addresses', 'country'));
     }
 
     /**

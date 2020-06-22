@@ -56,6 +56,9 @@ Route::get('/products/addToCart/{id}', 'MenuController@addToCart')->name('addToC
 Route::post('cart', 'MenuController@updateQuantity')->name('quantity');
 Route::get('/removeItem/{id}', 'MenuController@removeItem')->name('removeItem');
 
+//routes stripe payment
+Route::get('stripe', 'StripePaymentController@stripe');
+Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');
 
 
 

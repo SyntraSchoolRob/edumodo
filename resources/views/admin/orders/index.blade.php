@@ -15,6 +15,7 @@
                 <th scope="row">Product_id</th>
                 <th scope="row">Items</th>
                 <th scope="row">Total Price</th>
+                <th scope="row">Delivery</th>
                 <th scope="row">Created_at</th>
                 <th scope="row">Updated_at</th>
                 <th scope="row">Order Details</th>
@@ -29,6 +30,7 @@
                         <td>{{$order->product_id}}</td>
                         <td>{{$order->items}}</td>
                         <td>{{$order->totalprice}}</td>
+                        <td>{{$order->delivery}}</td>
                         <td>{{$order->created_at}}</td>
                         <td>{{$order->updated_at}}</td>
                         <td><a href="{{route('orders.edit',$order->id)}}">Details</a></td>
