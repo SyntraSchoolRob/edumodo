@@ -25,6 +25,12 @@ require('../../resources/assets/admin_assets/js/mijnscript.js');
 require('../../resources/assets/admin_assets/js/popper.min.js');
 require('../../resources/assets/admin_assets/js/sb-admin-2.js');
 
+//stripe payment scripts front-end
+/*
+require('../../resources/assets/js/stripe/stripe-v2.js');
+require('../../resources/assets/js/stripe/checkoutFormStripe.js');
+*/
+
 window.Vue = require('vue');
 
 /**

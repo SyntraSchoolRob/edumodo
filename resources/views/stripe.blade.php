@@ -10,6 +10,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+    @if (Session::has('success'))
+
+        <meta http-equiv="Refresh" content="5;url={{route('shop')}}" />
+
+    @endif
+
     <style type="text/css">
 
         .panel-title {
@@ -17,6 +23,7 @@
             display: inline;
 
             font-weight: bold;
+
 
         }
 
@@ -48,19 +55,17 @@
 
 <body>
 
-
-
 <div class="container">
-
-
-
-    <h1>Laravel 5 - Stripe Payment Gateway Integration Example <br/> ItSolutionStuff.com</h1>
 
 
 
     <div class="row">
 
         <div class="col-md-6 col-md-offset-3">
+
+            <h1>
+                Place your order
+            </h1>
 
             <div class="panel panel-default credit-card-box">
 
@@ -82,8 +87,6 @@
 
                 <div class="panel-body">
 
-
-
                     @if (Session::has('success'))
 
                         <div class="alert alert-success text-center">
@@ -96,9 +99,7 @@
 
                     @endif
 
-
-
-                    <form role="form" action="{{ route('stripe.post') }}" method="post" class="require-validation"
+                    <form role="form" action="{{ route('order.post') }}" method="post" class="require-validation"
 
                           data-cc-on-file="false"
 
@@ -108,7 +109,7 @@
 
                         @csrf
 
-
+                        @if(Session::has('cart'))
 
                         <div class='form-row row'>
 
@@ -116,13 +117,11 @@
 
                                 <label class='control-label'>Name on Card</label> <input
 
-                                    class='form-control' size='4' type='text'>
+                                    class='form-control' size='4' type='text' placeholder="ex: Robbe">
 
                             </div>
 
                         </div>
-
-
 
                         <div class='form-row row'>
 
@@ -132,13 +131,11 @@
 
                                     autocomplete='off' class='form-control card-number' size='20'
 
-                                    type='text'>
+                                    type='text' placeholder="xxxx xxxx xxxx xxxx">
 
                             </div>
 
                         </div>
-
-
 
                         <div class='form-row row'>
 
@@ -174,8 +171,6 @@
 
                         </div>
 
-
-
                         <div class='form-row row'>
 
                             <div class='col-md-12 error form-group hide'>
@@ -188,14 +183,17 @@
 
                         </div>
 
-
+                        @endif
 
                         <div class="row">
 
                             <div class="col-xs-12">
 
-                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now ($100)</button>
-
+                                @if(Session::has('cart'))
+                                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now (${{Session::get('cart')->totalPrice}})</button>
+                                @else
+                                <a href="{{ route('shop') }}" class="btn btn-primary btn-lg btn-block">Your cart is empty, go shopping first</a>
+                                @endif
                             </div>
 
                         </div>
@@ -217,15 +215,7 @@
 </div>
 
 
-
-</body>
-
-
-
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-
-
-
 <script type="text/javascript">
 
     $(function() {
@@ -333,5 +323,5 @@
     });
 
 </script>
-
+</body>
 </html>

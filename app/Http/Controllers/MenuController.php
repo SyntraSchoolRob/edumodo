@@ -21,7 +21,6 @@ class MenuController extends Controller
         $categories = Category::all();
         $schooltypes = Schooltype::all();
         $products = Product::with(['schooltype','photo', 'category'])->get();
-
         return view('shop', compact('products','categories', 'schooltypes'));
     }
     //filter

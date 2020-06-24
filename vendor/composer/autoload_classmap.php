@@ -37,6 +37,7 @@ return array(
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
     'App\\Http\\Controllers\\MenuController' => $baseDir . '/app/Http/Controllers/MenuController.php',
     'App\\Http\\Controllers\\PostCommentController' => $baseDir . '/app/Http/Controllers/PostCommentController.php',
+    'App\\Http\\Controllers\\StripePaymentController' => $baseDir . '/app/Http/Controllers/StripePaymentController.php',
     'App\\Http\\Controllers\\TagController' => $baseDir . '/app/Http/Controllers/TagController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Admin' => $baseDir . '/app/Http/Middleware/Admin.php',

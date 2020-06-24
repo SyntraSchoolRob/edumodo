@@ -9,9 +9,9 @@ Step3. composer install
 
 Step4. Create database with InnoDb engine: dbedumodo
 
-Step5. Open your editor and change .env file  (db_database=dbedumodo, db_username, db_password)
+Step5. Open your editor and change .env file (from .env.example)  (db_database=dbedumodo, db_username, db_password)
 
-//step 6 paypal
+step 6 public & private keys in .env file stripe
 
 Step7. php artisan key:generate
 
@@ -20,6 +20,8 @@ Step 8. php artisan migrate
 Step 9. php artisan db:seed
 
 Step 10. 10.1->check if node_modules ?  npm run dev (laravelmix) : npm install 
+
+(Step11. npm run watch ) build assets
 
 Users
 --

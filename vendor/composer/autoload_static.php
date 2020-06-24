@@ -471,6 +471,7 @@ class ComposerStaticInit51a7cc5790087efb3c504d6b64a00c07
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Controllers\\MenuController' => __DIR__ . '/../..' . '/app/Http/Controllers/MenuController.php',
         'App\\Http\\Controllers\\PostCommentController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostCommentController.php',
+        'App\\Http\\Controllers\\StripePaymentController' => __DIR__ . '/../..' . '/app/Http/Controllers/StripePaymentController.php',
         'App\\Http\\Controllers\\TagController' => __DIR__ . '/../..' . '/app/Http/Controllers/TagController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Admin' => __DIR__ . '/../..' . '/app/Http/Middleware/Admin.php',
