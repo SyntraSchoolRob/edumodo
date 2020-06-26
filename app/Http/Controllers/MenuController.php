@@ -69,7 +69,7 @@ class MenuController extends Controller
         $cart->add($product, $id);
         Session::put('cart', $cart);
         return back();
-        
+
     }
 
     public function cart()
@@ -104,5 +104,17 @@ class MenuController extends Controller
         Session::put('cart', $cart);
         return redirect('/cart');
     }
+
+    public function removeAll(Request $request){
+        $oldCart = Session::has('cart') ? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+
+        $cart->removeAll();
+
+
+        Session::put('cart', $cart);
+        return redirect('/cart');
+    }
+
 
 }
