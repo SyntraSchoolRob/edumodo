@@ -32,13 +32,24 @@ class StripePaymentController extends Controller
          */
 
 
+
+        $c = Session::get('cart')->totalPrice;
+        $a = "$c";
+        $b = str_replace('.', '', $a);
+        if (is_numeric($b)) {
+            $a = $b;
+            //echo $a;
+
+        }
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create ([
-            "amount" => 1000,
-            //"amount" => Session::get('cart')->totalPrice,
+            "amount" => $a,
             "currency" => "usd",
             "source" => $request->stripeToken,
             "description" => "New Payment.",
+            "metadata" => [
+                "contents" => 5,
+            ]
         ]);
         Session::flash('success', 'Payment successful! You will be redirected automatically within 5 seconds...');
 
