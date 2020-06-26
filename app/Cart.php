@@ -59,6 +59,13 @@ class Cart extends Model
         unset($this->products[$id]);
 
     }
+    public function removeAll(){
+        $this->totalQuantity -= $this->products['quantity'];
+        $this->totalPrice -= ($this->products['quantity']*$this->products['product_price']);
+        unset($this->products);
+
+    }
+
 
 
 }

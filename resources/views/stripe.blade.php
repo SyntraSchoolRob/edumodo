@@ -109,7 +109,9 @@
 
                         @csrf
 
-                        @if(Session::has('cart'))
+
+                        @if((Session::get('cart')->totalQuantity) != 0)
+
 
                         <div class='form-row row'>
 
@@ -189,7 +191,7 @@
 
                             <div class="col-xs-12">
 
-                                @if(Session::has('cart'))
+                                @if((Session::get('cart')->totalQuantity) != 0)
                                 <button class="btn btn-primary btn-lg btn-block" type="submit">Pay Now (${{Session::get('cart')->totalPrice}})</button>
                                 @else
                                 <a href="{{ route('shop') }}" class="btn btn-primary btn-lg btn-block">Your cart is empty, go shopping first</a>

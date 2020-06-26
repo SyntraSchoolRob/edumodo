@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Session;
+use Illuminate\Support\Facades\Session;
 use Stripe;
 
 class StripePaymentController extends Controller
@@ -25,11 +25,9 @@ class StripePaymentController extends Controller
     public function orderStripePost(Request $request)
     {
         /**
-         * This function handles two things
+         * 1. Send order details to database
          *
-         * 1. send order details to db
-         *
-         * 2. stripe payment
+         * 2. Stripe integration
          *
          */
 
@@ -37,15 +35,16 @@ class StripePaymentController extends Controller
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create ([
             "amount" => 1000,
+            //"amount" => Session::get('cart')->totalPrice,
             "currency" => "usd",
             "source" => $request->stripeToken,
             "description" => "New Payment.",
         ]);
         Session::flash('success', 'Payment successful! You will be redirected automatically within 5 seconds...');
-        if(Session::has('success')){
 
-            return back();
-        }
+        //empty cart
+
+
         return back();
     }
 }

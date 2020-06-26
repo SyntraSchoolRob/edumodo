@@ -64,11 +64,12 @@ class MenuController extends Controller
         $product = Product::with(['category', 'schooltype','photo'])->where('id','=', $id)->first();
 
         $oldCart = Session::has('cart') ? Session::get('cart'):null;
+
         $cart = new Cart($oldCart);
         $cart->add($product, $id);
         Session::put('cart', $cart);
-
         return back();
+        
     }
 
     public function cart()
@@ -79,6 +80,7 @@ class MenuController extends Controller
             $currentCart = Session::has('cart') ? Session::get('cart') : null;
             $cart = new Cart($currentCart);
             $cart = $cart->products;
+
             return view('cart',compact('cart'));
         }
 
@@ -89,7 +91,6 @@ class MenuController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart'):null;
         $cart = new Cart($oldCart);
         $cart->updateQuantity($request->id, $request->quantity);
-        //@dd($cart);
         Session::put('cart', $cart);
 
         return redirect('/cart');
@@ -99,11 +100,9 @@ class MenuController extends Controller
         $oldCart = Session::has('cart') ? Session::get('cart'):null;
         $cart = new Cart($oldCart);
         $cart->removeItem($id);
-        //(Session('cart'));
-        Session::put('cart', $cart);
 
+        Session::put('cart', $cart);
         return redirect('/cart');
     }
-
 
 }

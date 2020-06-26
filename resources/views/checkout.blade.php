@@ -76,7 +76,7 @@
                         <div class="form-row pr-sm-5">
                             <div class="form-group col-md-5">
                                 <label for="inputZip" class="pl-2">Zip</label>
-                                <input type="text" class="form-control rounded-pill" id="inputZip">
+                                <input type="text" class="form-control required rounded-pill" id="inputZip">
                             </div>
                             <div class="form-group col-md-7">
                                 <label for="country" class="pl-2">Country</label>
@@ -95,11 +95,11 @@
                     <div class="pl-sm-4">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" value="option1" id="checkboxEmail" name="radioDelivery">
-                            <label class="form-check-label" for="checkboxEmail">Send me my licensce code through email</label>
+                            <label class="form-check-label" for="checkboxEmail">Send me my licence code through email</label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" value="option2" id="checkboxPost"  name="radioDelivery">
-                            <label class="form-check-label" for="checkboxPost">Send me my licensce code through the post</label>
+                            <label class="form-check-label" for="checkboxPost">Send me my licence code through the post</label>
                         </div>
                     </div>
                     <p class="bg-light rounded-pill pl-4 p-2 text-uppercase font-weight-bold mt-5"><i class="fas fa-money-check-alt pr-3"></i>Payment options</p>
