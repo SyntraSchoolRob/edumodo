@@ -32,8 +32,8 @@ return [
 
     'stripe' => [
         'model' => App\User::class,
-        'key' => env('pk_test_51GwqbIKAXIFrcK9yoqaXuVaLAWMbc98cARYXWRAm7VdbgyQRZWEzWKYT81jDgukxTzVxKjv1CcM8uzs3Zg4bFRON006Uv4ODHZ'),
-        'secret' => env('sk_test_51GwqbIKAXIFrcK9yPcNa81gZr2rjAX6vQnZTM5bflRxpeZysV8hcIPd97WcbZgbxIl3KESbmKC1e91eHKTslkaC000WBoIuE7M'),
+        'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
     ],
 
 ];
