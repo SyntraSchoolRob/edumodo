@@ -58,7 +58,7 @@ Route::get('/removeItem/{id}', 'MenuController@removeItem')->name('removeItem');
 //Route::get('/removeAll}', 'MenuController@removeAll')->name('removeAll');
 
 //routes stripe payment
-Route::post('pay', 'StripePaymentController@pay')->name('pay');
+Route::get('pay', 'StripePaymentController@pay')->name('pay');
 Route::post('stripe', 'StripePaymentController@orderStripePost')->name('order.post');
 
 

@@ -12,7 +12,7 @@
     </header>
     <section class="container-fluid p-0" itemscope itemtype="https://schema.org/CheckoutPage">
         <h1 class="cBeige montserratB font-s-24 fs-39 d-flex justify-content-center pt-5 pb-5" itemprop="headline">Checkout</h1>
-        <form action="{{ route('pay') }}" method="post" >
+        <form action="{{ route('pay') }}" method="get" >
             @csrf
             <div class="row rounded shadow-sm mb-5 maxWidth1150 mx-auto p-md-4 bg-white">
                 <div class="col-12 col-md-6 p-4">
@@ -110,7 +110,7 @@
                             <label class="form-check-label" for="terms">I have read and agree to the websites <span class="underline">terms and conditions</span> and our <span class="underline"> privacy policy</span></label>
                         </div>
                     </div>
-                    @if(Session::has('cart'))
+                    @if((Session::get('cart')->totalQuantity) != 0)
                         <button class="btn btn-dark rounded-pill py-2 btn-block mt-3" type="submit">Fulfill your order  <i class="fas fa-money-check pl-2"></i></button>
                     @else
                         <a href="{{route('shop')}}" class="btn btn-dark rounded-pill py-2 btn-block mt-3 text-white" >Go shopping first  <i class="fas fa-money-check pl-2"></i></a>

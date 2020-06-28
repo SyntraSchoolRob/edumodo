@@ -17,6 +17,7 @@ class StripePaymentController extends Controller
     {
         //order-details user
 
+
         //load payment page
         return view('stripe');
     }
