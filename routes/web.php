@@ -55,12 +55,10 @@ Route::get('cart', 'MenuController@cart')->name('cart');
 Route::get('/products/addToCart/{id}', 'MenuController@addToCart')->name('addToCart');
 Route::post('cart', 'MenuController@updateQuantity')->name('quantity');
 Route::get('/removeItem/{id}', 'MenuController@removeItem')->name('removeItem');
-Route::get('/removeAll}', 'MenuController@removeAll')->name('removeAll');
+//Route::get('/removeAll}', 'MenuController@removeAll')->name('removeAll');
 
 //routes stripe payment
-Route::get('pay', 'StripePaymentController@pay')->name('pay');
+Route::post('pay', 'StripePaymentController@pay')->name('pay');
 Route::post('stripe', 'StripePaymentController@orderStripePost')->name('order.post');
-
-
 
 

@@ -15,6 +15,9 @@ class StripePaymentController extends Controller
      */
     public function pay()
     {
+        //order-details user
+
+        //load payment page
         return view('stripe');
     }
     /**
@@ -24,22 +27,13 @@ class StripePaymentController extends Controller
      */
     public function orderStripePost(Request $request)
     {
-        /**
-         * 1. Send order details to database
-         *
-         * 2. Stripe integration
-         *
-         */
-
-
-
+        //make full number: ex 15.25 becomes 1525 for stripe payment
         $c = Session::get('cart')->totalPrice;
         $a = "$c";
         $b = str_replace('.', '', $a);
         if (is_numeric($b)) {
             $a = $b;
             //echo $a;
-
         }
         Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         Stripe\Charge::create ([
@@ -47,15 +41,9 @@ class StripePaymentController extends Controller
             "currency" => "usd",
             "source" => $request->stripeToken,
             "description" => "New Payment.",
-            "metadata" => [
-                "contents" => 5,
-            ]
         ]);
         Session::flash('success', 'Payment successful! You will be redirected automatically within 5 seconds...');
-
-        //empty cart
-
-
+        //empty cart payment
         return back();
     }
 }

@@ -49,7 +49,6 @@
                            <br>
                             <small class="c5a9">Product price: <span>${{$item['product_price']}}</span></small><br>
                             <a href="{{route('removeItem', $item['product_id'])}}" class="hcBeige c5a9"><i class="fas fa-trash-alt pt-2 pl-2"></i></a>
-                            <a href="{{route('removeAll')}}" class="hcBeige c5a9"><i class="fas fa-trash-alt pt-2 pl-2"></i>test</a>
                             <input class="form-control form-control-sm" type="hidden" name="id"
                                    value="{{$item['product_id']}}">
 

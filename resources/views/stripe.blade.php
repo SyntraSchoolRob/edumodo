@@ -109,7 +109,6 @@
 
                         @csrf
 
-
                         @if((Session::get('cart')->totalQuantity) != 0)
 
 
@@ -136,6 +135,7 @@
                                     type='text' placeholder="xxxx xxxx xxxx xxxx">
 
                             </div>
+
 
                         </div>
 
