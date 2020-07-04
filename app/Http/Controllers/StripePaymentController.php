@@ -44,7 +44,8 @@ class StripePaymentController extends Controller
             "description" => "New Payment.",
         ]);
         Session::flash('success', 'Payment successful! You will be redirected automatically within 5 seconds...');
-        //empty cart payment
+        //empty cart after payment
+        unset($cart);
         return back();
     }
 }
